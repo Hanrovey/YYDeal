@@ -13,6 +13,9 @@
 
 @interface DPRequest : NSObject
 
+@property (nonatomic, copy) void (^success)(id json);
+@property (nonatomic, copy) void (^failure)(NSError *error);
+
 @property (nonatomic, unsafe_unretained) DPAPI *dpapi;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSDictionary *params;
