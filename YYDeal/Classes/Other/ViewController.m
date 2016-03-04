@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "YYAPITool.h"
+#import "YYDealTool.h"
+#import "YYFindDealsParam.h"
 @interface ViewController ()
 @end
 
@@ -16,32 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    YYFindDealsParam *param = [[YYFindDealsParam alloc] init];
+    param.city = @"上海";
     
-    YYAPITool *tool = [YYAPITool sharedAPITool];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"city"] = @"北京";
-
-    [tool requestWithUrl:@"v1/deal/find_deals" param:params success:^(id json) {
+    [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
         
-        NSLog(@"北京-success------%@",json);
+        NSLog(@"succ-----%@",result.deals);
+        
     } failure:^(NSError *error) {
-        
-        NSLog(@"北京-success------%@",error);
+        NSLog(@"err----%@",error);
     }];
-    
-    
-    NSMutableDictionary *params2 = [NSMutableDictionary dictionary];
-    params2[@"city"] = @"上海";
-    params2[@"category"] = @"KTV";
-    
-    [tool requestWithUrl:@"v1/deal/find_deals" param:params2 success:^(id json) {
-        
-        NSLog(@"上海-success------%@",json);
-    } failure:^(NSError *error) {
-        
-        NSLog(@"上海-success------%@",error);
-    }];
-
     
 }
 
