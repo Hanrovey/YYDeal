@@ -7,6 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "YYMetaDataTool.h"
+#import "YYCategory.h"
+#import "YYCity.h"
+#import "YYSort.h"
+#import "YYCityGroup.h"
 
 @interface YYDealTests : XCTestCase
 
@@ -36,4 +41,22 @@
     }];
 }
 
+- (void)testLoadMetaData
+{
+    /**
+     *  单元测试
+     */
+    YYMetaDataTool *tool = [YYMetaDataTool sharedMetaDataTool];
+    XCTAssert(tool.categories.count > 0 , @"分类数据内容正确");
+    XCTAssert(tool.cities.count > 0 , @"城市数据内容正确");
+    XCTAssert(tool.cityGroups.count > 0 , @"城市组数据内容正确");
+    XCTAssert(tool.sorts.count > 0 , @"排序数据内容正确");
+
+    
+    XCTAssert([[tool.categories firstObject] isKindOfClass:[YYCategory class]] , @"分类数据内容正确");
+
+    for (YYCategory *c in tool.categories) {
+        NSLog(@"-----%@  %@",c.name,c.subcategories);
+    }
+}
 @end

@@ -5,7 +5,7 @@
 // .m 文件
 #define YYSingletonM(name) \
 static id _instance = nil;\
-+ (instancetype)sharedAPITool\
++ (instancetype)shared##name\
 {\
     static dispatch_once_t onceToken;\
     dispatch_once(&onceToken, ^{\
