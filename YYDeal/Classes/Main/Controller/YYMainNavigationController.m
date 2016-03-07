@@ -21,4 +21,5 @@
     [navBar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
     
 }
+
 @end
