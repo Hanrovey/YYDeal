@@ -9,18 +9,93 @@
 #import "YYDealsViewController.h"
 #import "AwesomeMenu.h"
 #import "AwesomeMenuItem.h"
+#import "YYDealsTopMenu.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
-
+/** 分类菜单 */
+@property (weak, nonatomic) YYDealsTopMenu *categoryMenu;
+/** 区域菜单 */
+@property (weak, nonatomic) YYDealsTopMenu *regionMenu;
+/** 排序菜单 */
+@property (weak, nonatomic) YYDealsTopMenu *sortMenu;
 @end
 
 @implementation YYDealsViewController
 
+#pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 添加导航栏右边内容
+    [self setupNavRight];
+    
+    // 添加导航栏左边内容
+    [self setupNavLeft];
+    
     // 用户菜单
     [self setupUserMenu];
+}
+
+
+#pragma mark - 导航栏
+/**
+ *  添加导航栏右边
+ */
+- (void)setupNavRight
+{
+    // 搜索
+    UIBarButtonItem *searchItem = [UIBarButtonItem itemWithImageName:@"icon_search" highImageName:@"icon_search_highlighted" target:self action:@selector(searchClick)];
+    searchItem.customView.width = 50;
+    searchItem.customView.height = 27;
     
+    // 地图
+    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithImageName:@"icon_map" highImageName:@"icon_map_highlighted" target:self action:@selector(mapClick)];
+    mapItem.customView.width = searchItem.customView.width;
+    mapItem.customView.height = searchItem.customView.height;
+    
+    self.navigationItem.rightBarButtonItems = @[mapItem, searchItem];
+}
+
+/**
+ *  搜索
+ */
+- (void)searchClick
+{
+    
+}
+
+/**
+ *  地图
+ */
+- (void)mapClick
+{
+    
+}
+
+/**
+ *  添加导航栏左边
+ */
+- (void)setupNavLeft
+{
+    // 1.Logo
+    UIBarButtonItem *logoItem = [UIBarButtonItem itemWithImageName:@"icon_meituan_logo" highImageName:@"icon_meituan_logo" target:nil action:nil];
+    logoItem.customView.userInteractionEnabled = NO;
+    
+    // 2.分类
+    YYDealsTopMenu *categoryMenu = [YYDealsTopMenu menu];
+    UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:categoryMenu];
+    self.categoryMenu = categoryMenu;
+    
+    // 3.区域
+    YYDealsTopMenu *regionMenu = [YYDealsTopMenu menu];
+    UIBarButtonItem *regionItem = [[UIBarButtonItem alloc] initWithCustomView:regionMenu];
+    self.regionMenu = regionMenu;
+    
+    // 4.排序
+    YYDealsTopMenu *sortMenu = [YYDealsTopMenu menu];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortMenu];
+    self.sortMenu = sortMenu;
+    
+    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, regionItem, sortItem];
 }
 
 /**

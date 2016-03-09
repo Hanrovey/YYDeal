@@ -31,6 +31,9 @@
 		8BE50F601C8868AB004DEC6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50F5A1C8868AB004DEC6F /* main.m */; };
 		8BE50F611C8868AB004DEC6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50F5C1C8868AB004DEC6F /* ViewController.m */; };
 		8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50F631C88718F004DEC6F /* YYAPITool.m */; };
+		8BFAF7A51C90021B00750B58 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */; };
+		8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */; };
+		8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */; };
 		8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBE91C89ECE800621099 /* MJArgument.m */; };
 		8BFBFC001C89ECE800621099 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBEB1C89ECE800621099 /* MJConst.m */; };
 		8BFBFC011C89ECE800621099 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBEE1C89ECE800621099 /* MJFoundation.m */; };
@@ -117,6 +120,11 @@
 		8BE50F621C88718F004DEC6F /* YYAPITool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAPITool.h; sourceTree = "<group>"; };
 		8BE50F631C88718F004DEC6F /* YYAPITool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAPITool.m; sourceTree = "<group>"; };
 		8BE50F671C887E95004DEC6F /* YYSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSingleton.h; sourceTree = "<group>"; };
+		8BFAF7A31C90021B00750B58 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		8BFAF7A61C9005C900750B58 /* YYDealsTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealsTopMenu.h; sourceTree = "<group>"; };
+		8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealsTopMenu.m; sourceTree = "<group>"; };
+		8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDealsTopMenu.xib; sourceTree = "<group>"; };
 		8BFBFBE81C89ECE800621099 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		8BFBFBE91C89ECE800621099 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		8BFBFBEA1C89ECE800621099 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -344,6 +352,8 @@
 		8BE50F521C8868AB004DEC6F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8BFAF7A31C90021B00750B58 /* UIBarButtonItem+Extension.h */,
+				8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */,
 				8BFD65C11C8C6ACE00AC5F22 /* UIView+AutoLayout.h */,
 				8BFD65C21C8C6ACE00AC5F22 /* UIView+AutoLayout.m */,
 				8BFD65C31C8C6ACE00AC5F22 /* UIView+Extension.h */,
@@ -444,6 +454,9 @@
 		8BFD65B81C8C5E6100AC5F22 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BFAF7A61C9005C900750B58 /* YYDealsTopMenu.h */,
+				8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */,
+				8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,6 +581,7 @@
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
 				8B8E184A1C8C781F0074D6F3 /* cities.plist in Resources */,
 				8B2C2A771C61A19E00614D69 /* Main.storyboard in Resources */,
+				8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */,
 				8B8E184B1C8C781F0074D6F3 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +629,7 @@
 				8BE50F5F1C8868AB004DEC6F /* DPRequest.m in Sources */,
 				8B8E18661C8C7E280074D6F3 /* YYCity.m in Sources */,
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
+				8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */,
 				8B8E18591C8C7D4E0074D6F3 /* YYBusiness.m in Sources */,
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
 				8BFD65CC1C8C6AF900AC5F22 /* AwesomeMenu.m in Sources */,
@@ -622,6 +637,7 @@
 				8BFD65C01C8C6A8200AC5F22 /* YYDealsViewController.m in Sources */,
 				8B8E186C1C8C7E640074D6F3 /* YYCityGroup.m in Sources */,
 				8B8E18691C8C7E460074D6F3 /* YYRegion.m in Sources */,
+				8BFAF7A51C90021B00750B58 /* UIBarButtonItem+Extension.m in Sources */,
 				8B8E185A1C8C7D4E0074D6F3 /* YYDeal.m in Sources */,
 				8B8E18601C8C7DAC0074D6F3 /* YYCategory.m in Sources */,
 				8BE50F611C8868AB004DEC6F /* ViewController.m in Sources */,
@@ -772,6 +788,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hanrovey.YYDeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -784,6 +801,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hanrovey.YYDeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
