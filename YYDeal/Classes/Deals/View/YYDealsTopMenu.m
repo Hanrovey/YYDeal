@@ -9,8 +9,8 @@
 #import "YYDealsTopMenu.h"
 
 @interface YYDealsTopMenu()
-@property (weak, nonatomic) IBOutlet UILabel *titleView;
-@property (weak, nonatomic) IBOutlet UILabel *subTitleView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLable;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
 - (IBAction)imageButtonClick:(UIButton *)sender;
 @end
