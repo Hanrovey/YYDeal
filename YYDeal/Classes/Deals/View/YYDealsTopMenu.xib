@@ -18,22 +18,19 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh5-1i-irV" userLabel="标题">
                     <rect key="frame" x="40" y="0.0" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="火锅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJc-4b-B0a" userLabel="子标题">
                     <rect key="frame" x="40" y="19" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL9-jI-U1Z">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                     <inset key="contentEdgeInsets" minX="-110" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="icon_category_0"/>
-                    <connections>
-                        <action selector="imageButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="zjw-3q-HTB"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -56,7 +53,6 @@
             <connections>
                 <outlet property="imageButton" destination="XL9-jI-U1Z" id="0eN-fq-nat"/>
                 <outlet property="subTitleLable" destination="lJc-4b-B0a" id="b7a-Sc-m9c"/>
-                <outlet property="subTitleView" destination="lJc-4b-B0a" id="3bi-cG-xK2"/>
                 <outlet property="titleLable" destination="Gh5-1i-irV" id="fka-t0-6kY"/>
             </connections>
             <point key="canvasLocation" x="471" y="351"/>

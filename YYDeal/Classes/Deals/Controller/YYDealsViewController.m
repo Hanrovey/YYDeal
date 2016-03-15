@@ -10,16 +10,57 @@
 #import "AwesomeMenu.h"
 #import "AwesomeMenuItem.h"
 #import "YYDealsTopMenu.h"
+#import "YYCategoriesViewController.h"
+#import "YYRegionsViewController.h"
+#import "YYSortsViewController.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
+/** 顶部菜单*/
 /** 分类菜单 */
 @property (weak, nonatomic) YYDealsTopMenu *categoryMenu;
 /** 区域菜单 */
 @property (weak, nonatomic) YYDealsTopMenu *regionMenu;
 /** 排序菜单 */
 @property (weak, nonatomic) YYDealsTopMenu *sortMenu;
+
+
+/** 点击顶部菜单后弹出的Popover */
+/** 分类Popover */
+@property (strong, nonatomic) UIPopoverController *categoryPopover;
+/** 区域Popover */
+@property (strong, nonatomic) UIPopoverController *regionPopover;
+/** 排序Popover */
+@property (strong, nonatomic) UIPopoverController *sortPopover;
 @end
 
 @implementation YYDealsViewController
+
+- (UIPopoverController *)categoryPopover
+{
+    if (_categoryPopover == nil) {
+        
+        YYCategoriesViewController *cv = [[YYCategoriesViewController alloc] init];
+        self.categoryPopover = [[UIPopoverController alloc] initWithContentViewController:cv];
+    }
+    return _categoryPopover;
+}
+
+- (UIPopoverController *)regionPopover
+{
+    if (!_regionPopover) {
+        YYRegionsViewController *rv = [[YYRegionsViewController alloc] init];
+        self.regionPopover = [[UIPopoverController alloc] initWithContentViewController:rv];
+    }
+    return _regionPopover;
+}
+
+- (UIPopoverController *)sortPopover
+{
+    if (!_sortPopover) {
+        YYSortsViewController *sv = [[YYSortsViewController alloc] init];
+        self.sortPopover = [[UIPopoverController alloc] initWithContentViewController:sv];
+    }
+    return _sortPopover;
+}
 
 #pragma mark - 初始化
 - (void)viewDidLoad {
@@ -36,7 +77,7 @@
 }
 
 
-#pragma mark - 导航栏
+#pragma mark - 导航栏右边处理
 /**
  *  添加导航栏右边
  */
@@ -71,6 +112,7 @@
     
 }
 
+#pragma mark - 导航栏左边处理
 /**
  *  添加导航栏左边
  */
@@ -82,25 +124,45 @@
     
     // 2.分类
     YYDealsTopMenu *categoryMenu = [YYDealsTopMenu menu];
+    [categoryMenu addTarget:self action:@selector(categoryMenuClick)];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:categoryMenu];
     self.categoryMenu = categoryMenu;
     
     // 3.区域
     YYDealsTopMenu *regionMenu = [YYDealsTopMenu menu];
+    [regionMenu addTarget:self action:@selector(regionMenuClick)];
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc] initWithCustomView:regionMenu];
     self.regionMenu = regionMenu;
     
     // 4.排序
     YYDealsTopMenu *sortMenu = [YYDealsTopMenu menu];
+    [sortMenu addTarget:self action:@selector(sortMenuClick)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortMenu];
     self.sortMenu = sortMenu;
     
     self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, regionItem, sortItem];
 }
 
-/**
- *  创建一个path菜单item
- */
+/** 分类 */
+- (void)categoryMenuClick
+{
+    [self.categoryPopover presentPopoverFromRect:self.categoryMenu.bounds inView:self.categoryMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+/** 区域 */
+- (void)regionMenuClick
+{
+    [self.regionPopover presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+/** 排序 */
+- (void)sortMenuClick
+{
+    [self.sortPopover presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+
+/** 创建一个path菜单item  */
 - (AwesomeMenuItem *)itemWithContent:(NSString *)content highlightedContent:(NSString *)highlightedContent
 {
     UIImage *itemBg = [UIImage imageNamed:@"bg_pathMenu_black_normal"];

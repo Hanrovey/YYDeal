@@ -9,10 +9,6 @@
 #import "YYDealsTopMenu.h"
 
 @interface YYDealsTopMenu()
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
-@property (weak, nonatomic) IBOutlet UILabel *subTitleLable;
-@property (weak, nonatomic) IBOutlet UIButton *imageButton;
-- (IBAction)imageButtonClick:(UIButton *)sender;
 @end
 
 @implementation YYDealsTopMenu
@@ -31,6 +27,8 @@
     return self;
 }
 
-- (IBAction)imageButtonClick:(UIButton *)sender {
+- (void)addTarget:(id)target action:(SEL)action
+{
+    [self.imageButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */; };
+		3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */; };
+		3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF85641C919C2300A77AA4 /* YYSortsViewController.xib */; };
+		3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF85681C919C4400A77AA4 /* YYCategoriesViewController.m */; };
+		3ADF856C1C919C5700A77AA4 /* YYRegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF856B1C919C5700A77AA4 /* YYRegionsViewController.m */; };
 		8B2C2A771C61A19E00614D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2C2A751C61A19E00614D69 /* Main.storyboard */; };
 		8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2C2A7A1C61A19E00614D69 /* LaunchScreen.storyboard */; };
 		8B2C2A871C61A19E00614D69 /* YYDealTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C2A861C61A19E00614D69 /* YYDealTests.m */; };
@@ -73,6 +78,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		3ADF85621C919C2300A77AA4 /* YYSortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSortsViewController.h; sourceTree = "<group>"; };
+		3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYSortsViewController.m; sourceTree = "<group>"; };
+		3ADF85641C919C2300A77AA4 /* YYSortsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYSortsViewController.xib; sourceTree = "<group>"; };
+		3ADF85671C919C4400A77AA4 /* YYCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCategoriesViewController.h; sourceTree = "<group>"; };
+		3ADF85681C919C4400A77AA4 /* YYCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCategoriesViewController.m; sourceTree = "<group>"; };
+		3ADF856A1C919C5700A77AA4 /* YYRegionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRegionsViewController.h; sourceTree = "<group>"; };
+		3ADF856B1C919C5700A77AA4 /* YYRegionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRegionsViewController.m; sourceTree = "<group>"; };
 		8B2C2A691C61A19E00614D69 /* YYDeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYDeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2C2A761C61A19E00614D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B2C2A7B1C61A19E00614D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -352,6 +366,8 @@
 		8BE50F521C8868AB004DEC6F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */,
+				3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */,
 				8BFAF7A31C90021B00750B58 /* UIBarButtonItem+Extension.h */,
 				8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */,
 				8BFD65C11C8C6ACE00AC5F22 /* UIView+AutoLayout.h */,
@@ -447,6 +463,13 @@
 			children = (
 				8BFD65BE1C8C6A8200AC5F22 /* YYDealsViewController.h */,
 				8BFD65BF1C8C6A8200AC5F22 /* YYDealsViewController.m */,
+				3ADF85621C919C2300A77AA4 /* YYSortsViewController.h */,
+				3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */,
+				3ADF85641C919C2300A77AA4 /* YYSortsViewController.xib */,
+				3ADF85671C919C4400A77AA4 /* YYCategoriesViewController.h */,
+				3ADF85681C919C4400A77AA4 /* YYCategoriesViewController.m */,
+				3ADF856A1C919C5700A77AA4 /* YYRegionsViewController.h */,
+				3ADF856B1C919C5700A77AA4 /* YYRegionsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -577,6 +600,7 @@
 			files = (
 				8B8E18491C8C781F0074D6F3 /* categories.plist in Resources */,
 				8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */,
+				3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */,
 				8B8E184C1C8C781F0074D6F3 /* sorts.plist in Resources */,
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
 				8B8E184A1C8C781F0074D6F3 /* cities.plist in Resources */,
@@ -613,9 +637,11 @@
 				8B8E18631C8C7DEC0074D6F3 /* YYSort.m in Sources */,
 				8BFD65C61C8C6ACE00AC5F22 /* UIView+Extension.m in Sources */,
 				8B8E185B1C8C7D4E0074D6F3 /* YYFindDealsParam.m in Sources */,
+				3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */,
 				8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */,
 				8BE50F5E1C8868AB004DEC6F /* DPAPI.m in Sources */,
 				8BFBFC051C89ECE800621099 /* MJType.m in Sources */,
+				3ADF856C1C919C5700A77AA4 /* YYRegionsViewController.m in Sources */,
 				8BFD65C51C8C6ACE00AC5F22 /* UIView+AutoLayout.m in Sources */,
 				8B8E185C1C8C7D4E0074D6F3 /* YYFindDealsResult.m in Sources */,
 				8BFBFC001C89ECE800621099 /* MJConst.m in Sources */,
@@ -629,6 +655,8 @@
 				8BE50F5F1C8868AB004DEC6F /* DPRequest.m in Sources */,
 				8B8E18661C8C7E280074D6F3 /* YYCity.m in Sources */,
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
+				3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */,
+				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
 				8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */,
 				8B8E18591C8C7D4E0074D6F3 /* YYBusiness.m in Sources */,
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
