@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */; };
+		28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */; };
+		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
 		3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */; };
 		3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */; };
 		3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF85641C919C2300A77AA4 /* YYSortsViewController.xib */; };
@@ -78,6 +81,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
+		28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
+		28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
+		28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYRegionsViewController.xib; sourceTree = "<group>"; };
 		3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		3ADF85621C919C2300A77AA4 /* YYSortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSortsViewController.h; sourceTree = "<group>"; };
@@ -470,6 +477,7 @@
 				3ADF85681C919C4400A77AA4 /* YYCategoriesViewController.m */,
 				3ADF856A1C919C5700A77AA4 /* YYRegionsViewController.h */,
 				3ADF856B1C919C5700A77AA4 /* YYRegionsViewController.m */,
+				28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +488,9 @@
 				8BFAF7A61C9005C900750B58 /* YYDealsTopMenu.h */,
 				8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */,
 				8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */,
+				28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */,
+				28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */,
+				28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -599,12 +610,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B8E18491C8C781F0074D6F3 /* categories.plist in Resources */,
+				28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */,
 				8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */,
 				3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */,
 				8B8E184C1C8C781F0074D6F3 /* sorts.plist in Resources */,
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
 				8B8E184A1C8C781F0074D6F3 /* cities.plist in Resources */,
 				8B2C2A771C61A19E00614D69 /* Main.storyboard in Resources */,
+				28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */,
 				8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */,
 				8B8E184B1C8C781F0074D6F3 /* cityGroups.plist in Resources */,
 			);
@@ -647,6 +660,7 @@
 				8BFBFC001C89ECE800621099 /* MJConst.m in Sources */,
 				8BFBFC011C89ECE800621099 /* MJFoundation.m in Sources */,
 				8BFBFC0C1C89ED1900621099 /* YYDealTool.m in Sources */,
+				28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */,
 				8BFBFC041C89ECE800621099 /* MJMethod.m in Sources */,
 				8BFBFC091C89ECE800621099 /* NSObject+MJMember.m in Sources */,
 				8BFD65BD1C8C69B300AC5F22 /* YYMainNavigationController.m in Sources */,

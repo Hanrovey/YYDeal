@@ -7,7 +7,7 @@
 //
 
 #import "YYRegionsViewController.h"
-
+#import "YYDropDownView.h"
 @interface YYRegionsViewController ()
 
 @end
@@ -16,22 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 顶部View
+    UIView *topView = [self.view.subviews firstObject];
+    
+    //菜单View
+    YYDropDownView *dropView = [YYDropDownView menu];
+    [self.view addSubview:dropView];
+    
+    // menu的ALEdgeTop == topView的ALEdgeBottom
+    [dropView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:topView];
+    // 除开顶部，其他方向距离父控件的间距都为0
+    [dropView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

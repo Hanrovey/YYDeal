@@ -21,3 +21,14 @@
 #import "YYMetaDataTool.h"
 #import "UIButton+Extension.h"
 #endif
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+// 在这里import库
+#endif
