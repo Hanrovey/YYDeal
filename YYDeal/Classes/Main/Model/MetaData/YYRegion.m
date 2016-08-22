@@ -10,5 +10,13 @@
 #import "YYRegion.h"
 
 @implementation YYRegion
+- (NSString *)name
+{
+    return self.name;
+}
 
+- (NSArray *)subtitles
+{
+    return self.subregions;
+}
 @end

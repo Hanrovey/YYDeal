@@ -7,7 +7,8 @@
 //
 
 #import "YYDropDownView.h"
-
+#import "YYDropDownMainCell.h"
+#import "YYDropDownSubCell.h"
 @interface YYDropDownView() <UITableViewDelegate,UITableViewDataSource>
 /* 主表 */
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
@@ -29,47 +30,67 @@
 /**
  *  一个UI控件即将添加到窗口中就调用
  */
-- (void)willMoveToWindow:(UIWindow *)newWindow
+//- (void)willMoveToWindow:(UIWindow *)newWindow
+//{
+//    self.mainTable.backgroundColor = [UIColor redColor];
+//    self.subTable.backgroundColor = [UIColor blueColor];
+//}
+
+#pragma mark - 公共方法
+- (void)setItems:(NSArray *)items
 {
-    self.mainTable.backgroundColor = [UIColor redColor];
-    self.subTable.backgroundColor = [UIColor blueColor];
+    _items = items;
+    
+    // 刷新表格
+    [self.mainTable reloadData];
+    [self.subTable reloadData];
 }
 
 #pragma mark - UITableView Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (self.mainTable) {
-        return 15;
+        return self.items.count;
     }else{
-        return 10;
+        
+        // 得到mainTableView选中的行
+        int mainRow = [self.mainTable indexPathForSelectedRow].row;
+        id<YYDropDownViewItem> item = self.items[mainRow];
+        return [item subtitles].count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
+
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    if (tableView == self.mainTable) { // 左边主表的cell
+        YYDropDownMainCell *mainCell = [YYDropDownMainCell cellWithTableView:tableView];
+        mainCell.item = self.items[indexPath.row];
+        return mainCell;
+    } else { // 右边从表的cell
+        YYDropDownSubCell *subCell = [YYDropDownSubCell cellWithTableView:tableView];
+        
+        // 得到mainTableView选中的行
+        int mainRow = [self.mainTable indexPathForSelectedRow].row;
+        id<YYDropDownViewItem> item = self.items[mainRow];
+        subCell.textLabel.text = [item subtitles][indexPath.row];
+        return subCell;
     }
-    
-    if (tableView == self.mainTable) {
-        cell.textLabel.text = [NSString stringWithFormat:@"Cell %ld", indexPath.row];
-    }else
-    {
-        cell.textLabel.text = [NSString stringWithFormat:@"Cell %ld", indexPath.row + 100];
-    }
-    
-    
-    
-    return cell;
 }
 
 #pragma mark - UITableView Delegate methods
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.mainTable)
+    {
+        // 刷新右边
+        [self.subTable reloadData];
+        
+    }else
+    {
+        
+    }
 }
 
 @end

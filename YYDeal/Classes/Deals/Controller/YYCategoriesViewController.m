@@ -16,7 +16,10 @@
 
 - (void)loadView
 {
-    self.view = [YYDropDownView menu];
+    YYDropDownView *menu = [YYDropDownView menu];
+    menu.items = [YYMetaDataTool sharedMetaDataTool].categories;
+    self.view = menu;
+    
 }
 
 - (void)viewDidLoad {

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YYDropDownView.h"
 
-@interface YYRegion : NSObject
+@interface YYRegion : NSObject <YYDropDownViewItem>
 
 /** 区域名称 */
 @property (copy, nonatomic) NSString *name;

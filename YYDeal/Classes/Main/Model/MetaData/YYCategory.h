@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface YYCategory : NSObject
+#import "YYDropDownView.h"
+@interface YYCategory : NSObject <YYDropDownViewItem>
 /** 类别名称 */
 @property (copy, nonatomic) NSString *name;
 /** 大图标 */

@@ -9,5 +9,23 @@
 #import "YYCategory.h"
 
 @implementation YYCategory
+- (NSString *)title
+{
+    return self.name;
+}
 
+- (NSArray *)subtitles
+{
+    return self.subcategories;
+}
+
+- (NSString *)image
+{
+    return self.small_icon;
+}
+
+- (NSString *)highlightedImage
+{
+    return self.small_highlighted_icon;
+}
 @end

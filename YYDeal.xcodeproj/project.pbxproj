@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E845051D6ACE6E008FE40E /* YYDropDownMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E845041D6ACE6E008FE40E /* YYDropDownMainCell.m */; };
+		19E845081D6ACE7E008FE40E /* YYDropDownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E845071D6ACE7E008FE40E /* YYDropDownSubCell.m */; };
 		28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */; };
 		28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */; };
 		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
@@ -81,6 +83,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19E845031D6ACE6E008FE40E /* YYDropDownMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownMainCell.h; sourceTree = "<group>"; };
+		19E845041D6ACE6E008FE40E /* YYDropDownMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownMainCell.m; sourceTree = "<group>"; };
+		19E845061D6ACE7E008FE40E /* YYDropDownSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownSubCell.h; sourceTree = "<group>"; };
+		19E845071D6ACE7E008FE40E /* YYDropDownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownSubCell.m; sourceTree = "<group>"; };
 		28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
 		28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
 		28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
@@ -491,6 +497,10 @@
 				28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */,
 				28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */,
 				28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */,
+				19E845031D6ACE6E008FE40E /* YYDropDownMainCell.h */,
+				19E845041D6ACE6E008FE40E /* YYDropDownMainCell.m */,
+				19E845061D6ACE7E008FE40E /* YYDropDownSubCell.h */,
+				19E845071D6ACE7E008FE40E /* YYDropDownSubCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -653,6 +663,7 @@
 				3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */,
 				8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */,
 				8BE50F5E1C8868AB004DEC6F /* DPAPI.m in Sources */,
+				19E845081D6ACE7E008FE40E /* YYDropDownSubCell.m in Sources */,
 				8BFBFC051C89ECE800621099 /* MJType.m in Sources */,
 				3ADF856C1C919C5700A77AA4 /* YYRegionsViewController.m in Sources */,
 				8BFD65C51C8C6ACE00AC5F22 /* UIView+AutoLayout.m in Sources */,
@@ -669,6 +680,7 @@
 				8BE50F5F1C8868AB004DEC6F /* DPRequest.m in Sources */,
 				8B8E18661C8C7E280074D6F3 /* YYCity.m in Sources */,
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
+				19E845051D6ACE6E008FE40E /* YYDropDownMainCell.m in Sources */,
 				3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */,
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
 				8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */,
