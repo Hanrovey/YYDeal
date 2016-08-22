@@ -10,7 +10,7 @@
 #import "YYRegion.h"
 
 @implementation YYRegion
-- (NSString *)name
+- (NSString *)title
 {
     return self.name;
 }

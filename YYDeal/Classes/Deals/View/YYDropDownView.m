@@ -7,8 +7,9 @@
 //
 
 #import "YYDropDownView.h"
-#import "YYDropDownMainCell.h"
+#import "YYDropDownViewMainCell.h"
 #import "YYDropDownSubCell.h"
+
 @interface YYDropDownView() <UITableViewDelegate,UITableViewDataSource>
 /* 主表 */
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
@@ -49,7 +50,7 @@
 #pragma mark - UITableView Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (self.mainTable) {
+    if (tableView == self.mainTable) {
         return self.items.count;
     }else{
         
@@ -60,14 +61,14 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    
-    if (tableView == self.mainTable) { // 左边主表的cell
-        YYDropDownMainCell *mainCell = [YYDropDownMainCell cellWithTableView:tableView];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.mainTable){ // 左边主表的cell
+        YYDropDownViewMainCell *mainCell = [YYDropDownViewMainCell cellWithTableView:tableView];
         mainCell.item = self.items[indexPath.row];
+        
         return mainCell;
-    } else { // 右边从表的cell
+    }else{ // 右边从表的cell
         YYDropDownSubCell *subCell = [YYDropDownSubCell cellWithTableView:tableView];
         
         // 得到mainTableView选中的行
@@ -82,7 +83,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.mainTable)
+    if (tableView == self.mainTable)
     {
         // 刷新右边
         [self.subTable reloadData];

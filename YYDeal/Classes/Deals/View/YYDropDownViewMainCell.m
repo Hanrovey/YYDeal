@@ -1,21 +1,21 @@
 //
-//  YYDropDownMainCell.m
+//  YYDropDownViewMainCell.m
 //  YYDeal
 //
 //  Created by Ihefe_Hanrovey on 16/8/22.
 //  Copyright © 2016年 Hanrovey. All rights reserved.
 //
 
-#import "YYDropDownMainCell.h"
-@interface YYDropDownMainCell()
+#import "YYDropDownViewMainCell.h"
+@interface YYDropDownViewMainCell()
 @property (nonatomic, strong) UIImageView *rightArrow;
 @end
-@implementation YYDropDownMainCell
+@implementation YYDropDownViewMainCell
 
 - (UIImageView *)rightArrow
 {
     if (_rightArrow == nil) {
-        self.rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_cell_rightArrow"]];
+        _rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_cell_rightArrow"]];
     }
     return _rightArrow;
 }
@@ -24,9 +24,9 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
     static NSString *ID = @"main";
-    YYDropDownMainCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    YYDropDownViewMainCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[YYDropDownMainCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [[YYDropDownViewMainCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     return cell;
 }
@@ -49,7 +49,7 @@
 - (void)setItem:(id<YYDropDownViewItem>)item
 {
     _item = item;
-    
+
     // 标题
     self.textLabel.text = [item title];
     // 图标
@@ -68,5 +68,6 @@
         self.accessoryView = nil;
     }
 }
+
 
 @end

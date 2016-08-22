@@ -22,10 +22,11 @@
     
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    self.preferredContentSize = self.view.size;
+    self.preferredContentSize = CGSizeMake(325, 480);
     
 }
 

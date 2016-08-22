@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @protocol YYDropDownViewItem <NSObject>
 @required
 /** 标题 */
@@ -20,6 +21,7 @@
 /** 选中的图标 */
 - (NSString *)highlightedImage;
 @end
+
 
 @interface YYDropDownView : UIView
 + (instancetype)menu;

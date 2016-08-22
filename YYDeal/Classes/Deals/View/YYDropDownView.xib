@@ -7,48 +7,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YYDropDownView">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="480"/>
+        <view contentMode="scaleToFill" id="aC2-SA-B00" customClass="YYDropDownView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-FV-Vdc">
-                    <rect key="frame" x="0.0" y="0.0" width="125" height="480"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-eq-yNT" userLabel="Main">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="480"/>
                     <connections>
-                        <outlet property="dataSource" destination="iN0-l3-epB" id="CJG-7V-Fcs"/>
-                        <outlet property="delegate" destination="iN0-l3-epB" id="jGq-Rc-QiU"/>
+                        <outlet property="dataSource" destination="aC2-SA-B00" id="dIc-Kg-jUh"/>
+                        <outlet property="delegate" destination="aC2-SA-B00" id="NxC-GC-1Ho"/>
                     </connections>
                 </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fd9-y1-aZl">
-                    <rect key="frame" x="125" y="0.0" width="125" height="480"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="125" id="9Ri-m6-P3W"/>
-                    </constraints>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GCX-q7-yEh" userLabel="Sub">
+                    <rect key="frame" x="150" y="0.0" width="150" height="480"/>
                     <connections>
-                        <outlet property="dataSource" destination="iN0-l3-epB" id="lOV-YF-i5n"/>
-                        <outlet property="delegate" destination="iN0-l3-epB" id="Ptf-h1-HP9"/>
+                        <outlet property="dataSource" destination="aC2-SA-B00" id="De4-4m-BPF"/>
+                        <outlet property="delegate" destination="aC2-SA-B00" id="8kq-Qs-eGe"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="fd9-y1-aZl" firstAttribute="width" secondItem="aTh-FV-Vdc" secondAttribute="width" id="TWD-tF-m1L"/>
-                <constraint firstAttribute="trailing" secondItem="fd9-y1-aZl" secondAttribute="trailing" id="V7P-79-6nW"/>
-                <constraint firstItem="fd9-y1-aZl" firstAttribute="height" secondItem="aTh-FV-Vdc" secondAttribute="height" id="b0a-iQ-Jaq"/>
-                <constraint firstAttribute="bottom" secondItem="fd9-y1-aZl" secondAttribute="bottom" id="b0y-vx-ydf"/>
-                <constraint firstAttribute="bottom" secondItem="aTh-FV-Vdc" secondAttribute="bottom" id="geS-hW-al8"/>
-                <constraint firstItem="aTh-FV-Vdc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gjn-ld-pI8"/>
-                <constraint firstItem="aTh-FV-Vdc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pkA-wr-7qs"/>
-                <constraint firstItem="fd9-y1-aZl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yZE-TY-uIQ"/>
+                <constraint firstAttribute="trailing" secondItem="GCX-q7-yEh" secondAttribute="trailing" id="3c4-Dq-o6F"/>
+                <constraint firstAttribute="bottom" secondItem="hBe-eq-yNT" secondAttribute="bottom" id="Vy6-hM-TwG"/>
+                <constraint firstItem="GCX-q7-yEh" firstAttribute="width" secondItem="hBe-eq-yNT" secondAttribute="width" id="Wlu-jQ-ewF"/>
+                <constraint firstItem="GCX-q7-yEh" firstAttribute="leading" secondItem="hBe-eq-yNT" secondAttribute="trailing" id="i1G-Xr-ckz"/>
+                <constraint firstItem="GCX-q7-yEh" firstAttribute="top" secondItem="aC2-SA-B00" secondAttribute="top" id="lJt-gO-wBn"/>
+                <constraint firstAttribute="bottom" secondItem="GCX-q7-yEh" secondAttribute="bottom" id="nDC-Mj-Fg3"/>
+                <constraint firstItem="hBe-eq-yNT" firstAttribute="leading" secondItem="aC2-SA-B00" secondAttribute="leading" id="oGU-m9-oU5"/>
+                <constraint firstItem="hBe-eq-yNT" firstAttribute="top" secondItem="aC2-SA-B00" secondAttribute="top" id="qNd-B5-3wk"/>
+                <constraint firstItem="GCX-q7-yEh" firstAttribute="leading" secondItem="hBe-eq-yNT" secondAttribute="trailing" id="yCU-hW-Hso"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="mainTable" destination="aTh-FV-Vdc" id="AXs-yM-Idm"/>
-                <outlet property="subTable" destination="fd9-y1-aZl" id="rDu-Xd-V3a"/>
+                <outlet property="mainTable" destination="hBe-eq-yNT" id="dGR-ka-GCv"/>
+                <outlet property="subTable" destination="GCX-q7-yEh" id="IQB-1u-XHo"/>
             </connections>
-            <point key="canvasLocation" x="248" y="281"/>
         </view>
     </objects>
 </document>
