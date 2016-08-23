@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		1978992D1D6AE0A000096096 /* YYDropDownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1978992B1D6AE0A000096096 /* YYDropDownSubCell.m */; };
 		197899321D6AEF3300096096 /* YYDropDownViewMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197899311D6AEF3300096096 /* YYDropDownViewMainCell.m */; };
-		197899381D6AF50A00096096 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899331D6AF50A00096096 /* categories.plist */; };
-		197899391D6AF50A00096096 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899341D6AF50A00096096 /* cities.plist */; };
-		1978993A1D6AF50A00096096 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899351D6AF50A00096096 /* cityGroups.plist */; };
-		1978993B1D6AF50A00096096 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899361D6AF50A00096096 /* sorts.plist */; };
 		19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */; };
 		19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */; };
+		19BD15BE1D6C3AED0083F7F7 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BA1D6C3AED0083F7F7 /* categories.plist */; };
+		19BD15BF1D6C3AED0083F7F7 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BB1D6C3AED0083F7F7 /* cities.plist */; };
+		19BD15C01D6C3AED0083F7F7 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BC1D6C3AED0083F7F7 /* cityGroups.plist */; };
+		19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BD1D6C3AED0083F7F7 /* sorts.plist */; };
+		19BD15C41D6C56820083F7F7 /* YYCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */; };
 		28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */; };
 		28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */; };
 		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
@@ -89,13 +90,15 @@
 		1978992B1D6AE0A000096096 /* YYDropDownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownSubCell.m; sourceTree = "<group>"; };
 		197899301D6AEF3300096096 /* YYDropDownViewMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownViewMainCell.h; sourceTree = "<group>"; };
 		197899311D6AEF3300096096 /* YYDropDownViewMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownViewMainCell.m; sourceTree = "<group>"; };
-		197899331D6AF50A00096096 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
-		197899341D6AF50A00096096 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
-		197899351D6AF50A00096096 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
-		197899361D6AF50A00096096 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitiesViewController.h; sourceTree = "<group>"; };
 		19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitiesViewController.m; sourceTree = "<group>"; };
 		19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYCitiesViewController.xib; sourceTree = "<group>"; };
+		19BD15BA1D6C3AED0083F7F7 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		19BD15BB1D6C3AED0083F7F7 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		19BD15BC1D6C3AED0083F7F7 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
+		19BD15BD1D6C3AED0083F7F7 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		19BD15C21D6C56820083F7F7 /* YYCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitySearchViewController.h; sourceTree = "<group>"; };
+		19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitySearchViewController.m; sourceTree = "<group>"; };
 		28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
 		28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
 		28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
@@ -223,16 +226,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		197899371D6AF50A00096096 /* JSON */ = {
+		19BD15B91D6C3AED0083F7F7 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				197899331D6AF50A00096096 /* categories.plist */,
-				197899341D6AF50A00096096 /* cities.plist */,
-				197899351D6AF50A00096096 /* cityGroups.plist */,
-				197899361D6AF50A00096096 /* sorts.plist */,
+				19BD15BA1D6C3AED0083F7F7 /* categories.plist */,
+				19BD15BB1D6C3AED0083F7F7 /* cities.plist */,
+				19BD15BC1D6C3AED0083F7F7 /* cityGroups.plist */,
+				19BD15BD1D6C3AED0083F7F7 /* sorts.plist */,
 			);
-			name = JSON;
-			path = "../../../Downloads/0818/代码/黑团HD09-分类、区域菜单/黑团HD/JSON";
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		8B2C2A601C61A19E00614D69 = {
@@ -267,7 +269,7 @@
 		8B2C2A6C1C61A19E00614D69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				197899371D6AF50A00096096 /* JSON */,
+				19BD15B91D6C3AED0083F7F7 /* JSON */,
 				8BFD65B91C8C5F3400AC5F22 /* Assets.xcassets */,
 				8B2C2A751C61A19E00614D69 /* Main.storyboard */,
 				8B2C2A7A1C61A19E00614D69 /* LaunchScreen.storyboard */,
@@ -493,6 +495,8 @@
 				19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */,
 				19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */,
 				19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */,
+				19BD15C21D6C56820083F7F7 /* YYCitySearchViewController.h */,
+				19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -628,16 +632,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197899391D6AF50A00096096 /* cities.plist in Resources */,
-				197899381D6AF50A00096096 /* categories.plist in Resources */,
+				19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */,
 				28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */,
 				8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */,
 				3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */,
+				19BD15BF1D6C3AED0083F7F7 /* cities.plist in Resources */,
 				19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */,
-				1978993B1D6AF50A00096096 /* sorts.plist in Resources */,
-				1978993A1D6AF50A00096096 /* cityGroups.plist in Resources */,
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
+				19BD15BE1D6C3AED0083F7F7 /* categories.plist in Resources */,
 				8B2C2A771C61A19E00614D69 /* Main.storyboard in Resources */,
+				19BD15C01D6C3AED0083F7F7 /* cityGroups.plist in Resources */,
 				28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */,
 				8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */,
 			);
@@ -672,6 +676,7 @@
 				8B8E185B1C8C7D4E0074D6F3 /* YYFindDealsParam.m in Sources */,
 				3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */,
 				8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */,
+				19BD15C41D6C56820083F7F7 /* YYCitySearchViewController.m in Sources */,
 				8BE50F5E1C8868AB004DEC6F /* DPAPI.m in Sources */,
 				1978992D1D6AE0A000096096 /* YYDropDownSubCell.m in Sources */,
 				8BFBFC051C89ECE800621099 /* MJType.m in Sources */,

@@ -44,10 +44,9 @@
 
 - (IBAction)changeCity:(UIButton *)sender
 {
-    // 1.调用block
-//    if (self.changeCityBlock) {
-//        self.changeCityBlock();
-//    }
+    // 1.关闭popover
+    UIPopoverController *popover = [self valueForKeyPath:@"_popoverController"];
+    [popover dismissPopoverAnimated:YES];
     
     // 2.弹出城市列表
     YYCitiesViewController *cityVC = [[YYCitiesViewController alloc] init];
