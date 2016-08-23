@@ -13,6 +13,8 @@
 		197899391D6AF50A00096096 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899341D6AF50A00096096 /* cities.plist */; };
 		1978993A1D6AF50A00096096 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899351D6AF50A00096096 /* cityGroups.plist */; };
 		1978993B1D6AF50A00096096 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197899361D6AF50A00096096 /* sorts.plist */; };
+		19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */; };
+		19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */; };
 		28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */; };
 		28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */; };
 		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
@@ -91,6 +93,9 @@
 		197899341D6AF50A00096096 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		197899351D6AF50A00096096 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		197899361D6AF50A00096096 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitiesViewController.h; sourceTree = "<group>"; };
+		19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitiesViewController.m; sourceTree = "<group>"; };
+		19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYCitiesViewController.xib; sourceTree = "<group>"; };
 		28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
 		28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
 		28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
@@ -485,6 +490,9 @@
 				3ADF856A1C919C5700A77AA4 /* YYRegionsViewController.h */,
 				3ADF856B1C919C5700A77AA4 /* YYRegionsViewController.m */,
 				28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */,
+				19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */,
+				19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */,
+				19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -625,6 +633,7 @@
 				28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */,
 				8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */,
 				3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */,
+				19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */,
 				1978993B1D6AF50A00096096 /* sorts.plist in Resources */,
 				1978993A1D6AF50A00096096 /* cityGroups.plist in Resources */,
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
@@ -688,6 +697,7 @@
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
 				8BFD65CC1C8C6AF900AC5F22 /* AwesomeMenu.m in Sources */,
 				8BE50F5D1C8868AB004DEC6F /* AppDelegate.m in Sources */,
+				19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */,
 				8BFD65C01C8C6A8200AC5F22 /* YYDealsViewController.m in Sources */,
 				8B8E186C1C8C7E640074D6F3 /* YYCityGroup.m in Sources */,
 				8B8E18691C8C7E460074D6F3 /* YYRegion.m in Sources */,
@@ -838,6 +848,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//YYDeal/YYDeal-Prefix.pch";
 				INFOPLIST_FILE = YYDeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -852,6 +863,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//YYDeal/YYDeal-Prefix.pch";
 				INFOPLIST_FILE = YYDeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

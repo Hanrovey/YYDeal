@@ -49,6 +49,11 @@
     if (!_regionPopover) {
         YYRegionsViewController *rv = [[YYRegionsViewController alloc] init];
         self.regionPopover = [[UIPopoverController alloc] initWithContentViewController:rv];
+        
+        __weak typeof(self) weakSelf = self;
+        rv.changeCityBlock = ^{
+            [weakSelf.regionPopover dismissPopoverAnimated:YES];
+        };
     }
     return _regionPopover;
 }

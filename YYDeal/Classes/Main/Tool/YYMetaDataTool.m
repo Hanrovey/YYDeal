@@ -60,4 +60,17 @@ YYSingletonM(MetaDataTool)
     return _sorts;
 }
 
+- (YYCity *)cityWithName:(NSString *)name
+{
+    if (name.length == 0) return nil;
+    
+    for (YYCity *city in self.cities) {
+        if ([city.name isEqualToString:name]) return city;
+    }
+    
+    return nil;
+}
+
+
+
 @end

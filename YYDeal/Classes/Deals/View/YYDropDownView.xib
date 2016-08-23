@@ -44,6 +44,7 @@
                 <outlet property="mainTable" destination="hBe-eq-yNT" id="dGR-ka-GCv"/>
                 <outlet property="subTable" destination="GCX-q7-yEh" id="IQB-1u-XHo"/>
             </connections>
+            <point key="canvasLocation" x="343" y="314"/>
         </view>
     </objects>
 </document>

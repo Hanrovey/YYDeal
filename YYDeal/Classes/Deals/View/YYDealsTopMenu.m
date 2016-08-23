@@ -15,7 +15,7 @@
 
 + (instancetype)menu
 {
-    return [[[NSBundle mainBundle] loadNibNamed:@"YYDealsTopMenu" owner:self options:nil] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:@"YYDealsTopMenu" owner:nil options:nil] firstObject];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder

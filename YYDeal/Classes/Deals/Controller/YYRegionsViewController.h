@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface YYRegionsViewController : UIViewController
-
+@property(nonatomic, copy) void (^changeCityBlock)();
 @end

@@ -8,8 +8,10 @@
 
 #import "YYRegionsViewController.h"
 #import "YYDropDownView.h"
+#import "YYCity.h"
+#import "YYCitiesViewController.h"
 @interface YYRegionsViewController ()
-
+- (IBAction)changeCity:(UIButton *)sender;
 @end
 
 @implementation YYRegionsViewController
@@ -22,12 +24,34 @@
     
     //菜单View
     YYDropDownView *dropView = [YYDropDownView menu];
+    
+#warning 临时的假数据
+    YYMetaDataTool *tool = [YYMetaDataTool sharedMetaDataTool];
+    YYCity *city = [tool cityWithName:@"广州"];
+    dropView.items = city.regions;
+    
     [self.view addSubview:dropView];
+    
     
     // menu的ALEdgeTop == topView的ALEdgeBottom
     [dropView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:topView];
     // 除开顶部，其他方向距离父控件的间距都为0
     [dropView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+
+    self.preferredContentSize = CGSizeMake(300, 480);
+
 }
 
+- (IBAction)changeCity:(UIButton *)sender
+{
+    // 1.调用block
+//    if (self.changeCityBlock) {
+//        self.changeCityBlock();
+//    }
+    
+    // 2.弹出城市列表
+    YYCitiesViewController *cityVC = [[YYCitiesViewController alloc] init];
+    cityVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:cityVC animated:YES completion:nil];
+}
 @end

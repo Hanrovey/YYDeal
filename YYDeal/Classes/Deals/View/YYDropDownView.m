@@ -22,7 +22,7 @@
 
 + (instancetype)menu
 {
-    return [[[NSBundle mainBundle] loadNibNamed:@"YYDropDownView" owner:self options:nil] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:@"YYDropDownView" owner:nil options:nil] lastObject];
 }
 
 // initWithCoder:(NSCoder *)aDecoder --> awakeFromNib(xib中的所有属性、方法已经连线成功)
@@ -42,9 +42,11 @@
 {
     _items = items;
     
-    // 刷新表格
-    [self.mainTable reloadData];
-    [self.subTable reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.mainTable reloadData];
+        [self.subTable reloadData];
+    });
 }
 
 #pragma mark - UITableView Datasource

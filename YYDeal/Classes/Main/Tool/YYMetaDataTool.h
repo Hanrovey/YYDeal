@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YYSingleton.h"
-
+@class YYCity;
 @interface YYMetaDataTool : NSObject
 
 YYSingletonH(MetaDataTool)
@@ -29,4 +29,7 @@ YYSingletonH(MetaDataTool)
  *  所有的排序
  */
 @property (strong, nonatomic, readonly) NSArray *sorts;
+
+- (YYCity *)cityWithName:(NSString *)name;
+
 @end
