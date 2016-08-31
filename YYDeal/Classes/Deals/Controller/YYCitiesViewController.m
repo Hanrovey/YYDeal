@@ -63,6 +63,12 @@
         self.cover.alpha = 0.0;
     }];
     
+    // 清空文字
+    searchBar.text = nil;
+    
+    // 移除城市搜索结果
+    [self.citySearchVc.view removeFromSuperview];
+    
 }
 
 /** 搜索框开始编辑（弹出键盘） */
@@ -97,7 +103,11 @@
         
         [self.citySearchVc.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
         [self.citySearchVc.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:searchBar];
+        
+        self.citySearchVc.searchText = searchText;
     }
+    
+    
 }
 
 #pragma mark - 让控制器在formSheet情况下也能正常退出键盘
