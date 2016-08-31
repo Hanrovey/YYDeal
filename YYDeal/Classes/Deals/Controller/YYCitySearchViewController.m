@@ -75,4 +75,14 @@
 {
     return [NSString stringWithFormat:@"共有%ld个搜索结果", self.resultCities.count];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 1.关闭控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2.发出通知
+    YYCity *city = self.resultCities[indexPath.row];
+    [YYNotificationCenter postNotificationName:YYCityDidSelectNotification object:nil userInfo:@{YYSelectedCity : city}];
+}
 @end

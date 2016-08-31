@@ -26,9 +26,9 @@
     YYDropDownView *dropView = [YYDropDownView menu];
     
 #warning 临时的假数据
-    YYMetaDataTool *tool = [YYMetaDataTool sharedMetaDataTool];
-    YYCity *city = [tool cityWithName:@"广州"];
-    dropView.items = city.regions;
+//    YYMetaDataTool *tool = [YYMetaDataTool sharedMetaDataTool];
+//    YYCity *city = [tool cityWithName:@"广州"];
+//    dropView.items = city.regions;
     
     [self.view addSubview:dropView];
     

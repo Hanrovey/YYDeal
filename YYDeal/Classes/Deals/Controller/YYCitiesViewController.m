@@ -19,7 +19,7 @@
 /** 城市组数据 */
 @property (strong, nonatomic) NSArray *cityGroups;
 /** 城市搜索结果界面 */
-@property (nonatomic, strong) YYCitySearchViewController *citySearchVc;
+@property (nonatomic, weak) YYCitySearchViewController *citySearchVc;
 @end
 
 @implementation YYCitiesViewController
@@ -33,7 +33,9 @@
 - (YYCitySearchViewController *)citySearchVc
 {
     if (!_citySearchVc) {
-        self.citySearchVc = [[YYCitySearchViewController alloc] init];
+        YYCitySearchViewController *citySearchVc = [[YYCitySearchViewController alloc] init];
+        [self addChildViewController:citySearchVc];
+        self.citySearchVc = citySearchVc;
     }
     return _citySearchVc;
 }
@@ -50,6 +52,10 @@
 /** 搜索框结束编辑（退出键盘） */
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
+    
+    // 如果正在dissmis，就不要执行后面代码
+    if (self.isBeingDismissed) return;
+    
     // 更换背景
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
     // 隐藏取消按钮
@@ -99,6 +105,7 @@
 {
     [self.citySearchVc.view removeFromSuperview];
     if (searchText.length > 0) {
+        
         [self.view addSubview:self.citySearchVc.view];
         
         [self.citySearchVc.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
@@ -152,6 +159,18 @@
 {
     // 将cityGroups数组中所有元素的title属性值取出来，放到一个新的数组
     return [self.cityGroups valueForKeyPath:@"title"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 1.关闭控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2.发出通知
+    YYCityGroup *group = self.cityGroups[indexPath.section];
+    NSString *cityName = group.cities[indexPath.row];
+    YYCity *city = [[YYMetaDataTool sharedMetaDataTool] cityWithName:cityName];
+    [YYNotificationCenter postNotificationName:YYCityDidSelectNotification object:nil userInfo:@{YYSelectedCity : city}];
 }
 
 

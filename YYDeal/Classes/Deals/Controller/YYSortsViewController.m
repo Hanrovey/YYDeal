@@ -93,5 +93,8 @@
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;
+    
+    // 2.发出通知
+    [YYNotificationCenter postNotificationName:YYSortDidSelectNotification object:nil userInfo:@{YYSelectedSort : button.sort}];
 }
 @end

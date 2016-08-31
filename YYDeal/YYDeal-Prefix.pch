@@ -20,6 +20,16 @@
 #import "UIBarButtonItem+Extension.h"
 #import "YYMetaDataTool.h"
 #import "UIButton+Extension.h"
+
+/** 通知 */
+#define YYSortDidSelectNotification @"YYSortDidSelectNotification"
+#define YYSelectedSort @"YYSelectedSort"
+
+#define YYCityDidSelectNotification @"YYCityDidSelectNotification"
+#define YYSelectedCity @"YYSelectedCity"
+
+#define YYNotificationCenter [NSNotificationCenter defaultCenter]
+
 #endif
 
 
