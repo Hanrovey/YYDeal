@@ -165,9 +165,9 @@
 - (void)sortDidSelect:(NSNotification *)note
 {
     // 取出通知中的数据
-    YYSort *selectedSort = note.userInfo[YYSelectedSort];
+    self.selectedSort = note.userInfo[YYSelectedSort];
     
-    self.sortMenu.subTitleLable.text = selectedSort.label;
+    self.sortMenu.subTitleLable.text = self.selectedSort.label;
     
     // 销毁popover
     [self.sortPopover dismissPopoverAnimated:YES];
