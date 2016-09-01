@@ -38,4 +38,7 @@
 @property (nonatomic, strong) NSArray *items;
 
 @property (nonatomic, weak) id<YYDropDownViewDelegate> delegate;
+
+- (void)selectMain:(int)mainRow;
+- (void)selectSub:(int)subRow;
 @end

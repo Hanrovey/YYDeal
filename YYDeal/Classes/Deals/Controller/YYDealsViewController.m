@@ -152,8 +152,10 @@
     // 取出通知中的数据
     self.selectedCity = note.userInfo[YYSelectedCity];
     
-    self.regionMenu.titleLable.text = self.selectedCity.name;
-    self.regionMenu.subTitleLable.text = @"全部";
+    self.selectedRegion = [self.selectedCity.regions firstObject];
+    
+    self.regionMenu.titleLable.text = [NSString stringWithFormat:@"%@ - 全部", self.selectedCity.name];
+    self.regionMenu.subTitleLable.text = nil;
     
     // 更换显示的区域数据
     YYRegionsViewController *regionsVc = (YYRegionsViewController *)self.regionPopover.contentViewController;
@@ -249,18 +251,26 @@
 /** 分类 */
 - (void)categoryMenuClick
 {
+    YYCategoriesViewController *cs = (YYCategoriesViewController *)self.categoryPopover.contentViewController;
+    cs.selectedCategory = self.selectedCategory;
+    cs.selectedSubCategoryName = self.selectedSubCategoryName;
     [self.categoryPopover presentPopoverFromRect:self.categoryMenu.bounds inView:self.categoryMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 /** 区域 */
 - (void)regionMenuClick
 {
+    YYRegionsViewController *rs = (YYRegionsViewController *)self.regionPopover.contentViewController;
+    rs.selectedRegion = self.selectedRegion;
+    rs.selectedSubRegionName = self.selectedSubRegionName;
     [self.regionPopover presentPopoverFromRect:self.regionMenu.bounds inView:self.regionMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 /** 排序 */
 - (void)sortMenuClick
 {
+    YYSortsViewController *ss = (YYSortsViewController *)self.sortPopover.contentViewController;
+    ss.selectedSort = self.selectedSort;
     [self.sortPopover presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 

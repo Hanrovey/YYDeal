@@ -54,6 +54,22 @@
     self.dropView.items = regions;
 }
 
+- (void)setSelectedRegion:(YYRegion *)selectedRegion
+{
+    _selectedRegion = selectedRegion;
+    
+    int mainRow = [self.dropView.items indexOfObject:selectedRegion];
+    [self.dropView selectMain:mainRow];
+}
+
+- (void)setSelectedSubRegionName:(NSString *)selectedSubRegionName
+{
+    _selectedSubRegionName = [selectedSubRegionName copy];
+    
+    int subRow = [self.selectedRegion.subregions indexOfObject:selectedSubRegionName];
+    [self.dropView selectSub:subRow];
+}
+
 - (IBAction)changeCity:(UIButton *)sender
 {
     // 1.关闭popover
@@ -74,6 +90,13 @@
     {
         // 发出通知，选中了某个区域
         [YYNotificationCenter postNotificationName:YYRegionDidSelectNotification object:nil userInfo:@{YYSelectedRegion : r}];
+    }else
+    {
+        if (self.selectedRegion == r)
+        {
+            // 选中右边的子类别
+            self.selectedSubRegionName = self.selectedSubRegionName;
+        }
     }
 }
 

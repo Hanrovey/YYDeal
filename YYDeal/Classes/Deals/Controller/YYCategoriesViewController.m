@@ -10,18 +10,18 @@
 #import "YYDropDownView.h"
 #import "YYCategory.h"
 @interface YYCategoriesViewController ()<YYDropDownViewDelegate>
-
+@property (nonatomic ,weak) YYDropDownView *dropDownView;
 @end
 
 @implementation YYCategoriesViewController
 
 - (void)loadView
 {
-    YYDropDownView *menu = [YYDropDownView menu];
-    menu.delegate = self;
-    menu.items = [YYMetaDataTool sharedMetaDataTool].categories;
-    self.view = menu;
-    
+    YYDropDownView *dropDownView = [YYDropDownView menu];
+    dropDownView.delegate = self;
+    dropDownView.items = [YYMetaDataTool sharedMetaDataTool].categories;
+    self.view = dropDownView;
+    self.dropDownView = dropDownView;
 }
 
 - (void)viewDidLoad
@@ -40,6 +40,13 @@
     {
         // 发出通知，选中了某个分类
         [YYNotificationCenter postNotificationName:YYCategoryDidSelectNotification object:nil userInfo:@{YYSelectedCategory : c}];
+    }else
+    {
+        if (self.selectedCategory == c)
+        {
+            // 选中右边的子类别
+            self.selectedSubCategoryName = self.selectedSubCategoryName;
+        }
     }
 }
 
@@ -51,5 +58,22 @@
     userInfo[YYSelectedCategory] = c;
     userInfo[YYSelectedSubCategoryName] = c.subcategories[subRow];
     [YYNotificationCenter postNotificationName:YYCategoryDidSelectNotification object:nil userInfo:userInfo];
+}
+
+#pragma mark - 公共方法
+- (void)setSelectedCategory:(YYCategory *)selectedCategory
+{
+    _selectedCategory = selectedCategory;
+    
+    int mainRow = [self.dropDownView.items indexOfObject:selectedCategory];
+    [self.dropDownView selectMain:mainRow];
+}
+
+- (void)setSelectedSubCategoryName:(NSString *)selectedSubCategoryName
+{
+    _selectedSubCategoryName = [selectedSubCategoryName copy];
+    
+    int subRow = [self.selectedCategory.subcategories indexOfObject:selectedSubCategoryName];
+    [self.dropDownView selectSub:subRow];
 }
 @end

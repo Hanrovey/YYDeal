@@ -97,4 +97,20 @@
     // 2.发出通知
     [YYNotificationCenter postNotificationName:YYSortDidSelectNotification object:nil userInfo:@{YYSelectedSort : button.sort}];
 }
+
+#pragma mark - 公共方法
+- (void)setSelectedSort:(YYSort *)selectedSort
+{
+    _selectedSort = selectedSort;
+    
+    for (YYSortButton *button in self.view.subviews)
+    {
+        if ([button isKindOfClass:[YYSortButton class]] && button.sort == selectedSort)
+        {
+            self.selectedButton.selected = NO;
+            button.selected = YES;
+            self.selectedButton = button;
+        }
+    }
+}
 @end

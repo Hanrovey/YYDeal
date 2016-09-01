@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class YYCategory;
 @interface YYCategoriesViewController : UIViewController
-
+/** 当前选中的分类 */
+@property (strong, nonatomic) YYCategory *selectedCategory;
+/** 当前选中的子分类名称 */
+@property (copy, nonatomic) NSString *selectedSubCategoryName;
 @end

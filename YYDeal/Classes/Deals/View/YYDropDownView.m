@@ -25,6 +25,18 @@
     return [[[NSBundle mainBundle] loadNibNamed:@"YYDropDownView" owner:nil options:nil] lastObject];
 }
 
+#pragma mark - 公共方法
+- (void)selectMain:(int)mainRow
+{
+    [self.mainTable selectRowAtIndexPath:[NSIndexPath indexPathForRow:mainRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self.subTable reloadData];
+}
+
+- (void)selectSub:(int)subRow
+{
+    [self.subTable selectRowAtIndexPath:[NSIndexPath indexPathForRow:subRow inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+}
+
 // initWithCoder:(NSCoder *)aDecoder --> awakeFromNib(xib中的所有属性、方法已经连线成功)
 
 

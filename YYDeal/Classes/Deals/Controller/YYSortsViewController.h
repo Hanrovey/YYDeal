@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YYSort;
 @interface YYSortsViewController : UIViewController
-
+/** 当前选中的排序 */
+@property (strong, nonatomic) YYSort *selectedSort;
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YYRegion;
 @interface YYRegionsViewController : UIViewController
-//@property(nonatomic, copy) void (^changeCityBlock)();
 
 @property (nonatomic, strong) NSArray *regions;
-
+/** 当前选中的分类 */
+@property (strong, nonatomic) YYRegion *selectedRegion;
+/** 当前选中的子分类名称 */
+@property (copy, nonatomic) NSString *selectedSubRegionName;
 @end
