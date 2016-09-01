@@ -17,6 +17,9 @@
 #import "YYRegion.h"
 #import "YYSort.h"
 #import "YYCategory.h"
+#import "YYFindDealsParam.h"
+#import "YYDealTool.h"
+#import "YYDealCell.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -128,6 +131,9 @@
     
     // 关闭popover
     [self.regionPopover dismissPopoverAnimated:YES];
+    
+    // 加载最新的数据
+    [self loadNewDeals];
 }
 
 - (void)categoryDidSelect:(NSNotification *)note
@@ -144,6 +150,9 @@
     
     // 关闭popover
     [self.categoryPopover dismissPopoverAnimated:YES];
+    
+    // 加载最新的数据
+    [self loadNewDeals];
 }
 
 
@@ -160,6 +169,9 @@
     // 更换显示的区域数据
     YYRegionsViewController *regionsVc = (YYRegionsViewController *)self.regionPopover.contentViewController;
     regionsVc.regions = self.selectedCity.regions;
+    
+    // 加载最新的数据
+    [self loadNewDeals];
 }
 
 - (void)sortDidSelect:(NSNotification *)note
@@ -171,8 +183,56 @@
     
     // 销毁popover
     [self.sortPopover dismissPopoverAnimated:YES];
+    
+    // 加载最新的数据
+    [self loadNewDeals];
 }
 
+#pragma mark - 刷新数据
+- (void)loadNewDeals
+{
+    YYFindDealsParam *param = [[YYFindDealsParam alloc] init];
+    // 城市名称
+    param.city = self.selectedCity.name;
+    // 排序
+    if (self.selectedSort) {
+        param.sort = @(self.selectedSort.value);
+    }
+    // 除开“全部分类”和“全部”以外的所有词语都可以发
+    // 分类
+    if (self.selectedCategory && ![self.selectedCategory.name isEqualToString:@"全部分类"]) {
+        if (self.selectedSubCategoryName && ![self.selectedSubCategoryName isEqualToString:@"全部"]) {
+            param.category = self.selectedSubCategoryName;
+        } else {
+            param.category = self.selectedCategory.name;
+        }
+    }
+    // 区域
+    if (self.selectedRegion && ![self.selectedRegion.name isEqualToString:@"全部"]) {
+        if (self.selectedSubRegionName && ![self.selectedSubRegionName isEqualToString:@"全部"]) {
+            param.region = self.selectedSubRegionName;
+        } else {
+            param.region = self.selectedRegion.name;
+        }
+    }
+    // 设置单次返回的数量
+    param.limit = @(2);
+    
+    NSLog(@"%@",param.keyValues);
+    
+    [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
+        
+        NSLog(@"%@",result.keyValues);
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
+    }];
+}
+
+- (void)loadMoreDeals
+{
+    
+}
 
 #pragma mark - 导航栏右边处理
 /**
@@ -349,7 +409,24 @@
 }
 
 
+#pragma mark - 数据源方法
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 10;
+}
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    YYDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
+    NSLog(@"%@", cell);
+    return cell;
+    
+}
+
+#pragma mark - 代理方法
+
+
+#pragma mark - 设置导航栏
 
 
 

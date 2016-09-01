@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1978992D1D6AE0A000096096 /* YYDropDownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1978992B1D6AE0A000096096 /* YYDropDownSubCell.m */; };
-		197899321D6AEF3300096096 /* YYDropDownViewMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197899311D6AEF3300096096 /* YYDropDownViewMainCell.m */; };
+		194312AC1D78322C00343627 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312A81D78322C00343627 /* MBProgressHUD+MJ.m */; };
+		194312AD1D78322C00343627 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 194312A91D78322C00343627 /* MBProgressHUD.bundle */; };
+		194312AE1D78322C00343627 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312AB1D78322C00343627 /* MBProgressHUD.m */; };
+		194312B01D7832C000343627 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312AF1D7832C000343627 /* Foundation+Log.m */; };
+		194312BD1D7835E500343627 /* YYDealsTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312B31D7835E500343627 /* YYDealsTopMenu.m */; };
+		194312BE1D7835E500343627 /* YYDealsTopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194312B41D7835E500343627 /* YYDealsTopMenu.xib */; };
+		194312BF1D7835E500343627 /* YYDropDownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312B71D7835E500343627 /* YYDropDownSubCell.m */; };
+		194312C01D7835E500343627 /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312B91D7835E500343627 /* YYDropDownView.m */; };
+		194312C11D7835E500343627 /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194312BA1D7835E500343627 /* YYDropDownView.xib */; };
+		194312C21D7835E500343627 /* YYDropDownViewMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312BC1D7835E500343627 /* YYDropDownViewMainCell.m */; };
+		194312C51D78360600343627 /* YYDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312C41D78360600343627 /* YYDealCell.m */; };
 		19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */; };
 		19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */; };
 		19BD15BE1D6C3AED0083F7F7 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BA1D6C3AED0083F7F7 /* categories.plist */; };
@@ -16,8 +25,6 @@
 		19BD15C01D6C3AED0083F7F7 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BC1D6C3AED0083F7F7 /* cityGroups.plist */; };
 		19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BD1D6C3AED0083F7F7 /* sorts.plist */; };
 		19BD15C41D6C56820083F7F7 /* YYCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */; };
-		28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */; };
-		28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */; };
 		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
 		3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */; };
 		3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */; };
@@ -45,8 +52,6 @@
 		8BE50F611C8868AB004DEC6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50F5C1C8868AB004DEC6F /* ViewController.m */; };
 		8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE50F631C88718F004DEC6F /* YYAPITool.m */; };
 		8BFAF7A51C90021B00750B58 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */; };
-		8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */; };
-		8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */; };
 		8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBE91C89ECE800621099 /* MJArgument.m */; };
 		8BFBFC001C89ECE800621099 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBEB1C89ECE800621099 /* MJConst.m */; };
 		8BFBFC011C89ECE800621099 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFBFBEE1C89ECE800621099 /* MJFoundation.m */; };
@@ -86,10 +91,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1978992A1D6AE0A000096096 /* YYDropDownSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownSubCell.h; sourceTree = "<group>"; };
-		1978992B1D6AE0A000096096 /* YYDropDownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownSubCell.m; sourceTree = "<group>"; };
-		197899301D6AEF3300096096 /* YYDropDownViewMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownViewMainCell.h; sourceTree = "<group>"; };
-		197899311D6AEF3300096096 /* YYDropDownViewMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownViewMainCell.m; sourceTree = "<group>"; };
+		194312A71D78322C00343627 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		194312A81D78322C00343627 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		194312A91D78322C00343627 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		194312AA1D78322C00343627 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		194312AB1D78322C00343627 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		194312AF1D7832C000343627 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		194312B21D7835E500343627 /* YYDealsTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealsTopMenu.h; sourceTree = "<group>"; };
+		194312B31D7835E500343627 /* YYDealsTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealsTopMenu.m; sourceTree = "<group>"; };
+		194312B41D7835E500343627 /* YYDealsTopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDealsTopMenu.xib; sourceTree = "<group>"; };
+		194312B61D7835E500343627 /* YYDropDownSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownSubCell.h; sourceTree = "<group>"; };
+		194312B71D7835E500343627 /* YYDropDownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownSubCell.m; sourceTree = "<group>"; };
+		194312B81D7835E500343627 /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
+		194312B91D7835E500343627 /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
+		194312BA1D7835E500343627 /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
+		194312BB1D7835E500343627 /* YYDropDownViewMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownViewMainCell.h; sourceTree = "<group>"; };
+		194312BC1D7835E500343627 /* YYDropDownViewMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownViewMainCell.m; sourceTree = "<group>"; };
+		194312C31D78360600343627 /* YYDealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealCell.h; sourceTree = "<group>"; };
+		194312C41D78360600343627 /* YYDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealCell.m; sourceTree = "<group>"; };
 		19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitiesViewController.h; sourceTree = "<group>"; };
 		19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitiesViewController.m; sourceTree = "<group>"; };
 		19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYCitiesViewController.xib; sourceTree = "<group>"; };
@@ -99,9 +118,6 @@
 		19BD15BD1D6C3AED0083F7F7 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		19BD15C21D6C56820083F7F7 /* YYCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitySearchViewController.h; sourceTree = "<group>"; };
 		19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitySearchViewController.m; sourceTree = "<group>"; };
-		28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDropDownView.h; sourceTree = "<group>"; };
-		28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDropDownView.m; sourceTree = "<group>"; };
-		28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDropDownView.xib; sourceTree = "<group>"; };
 		28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYRegionsViewController.xib; sourceTree = "<group>"; };
 		3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
@@ -157,9 +173,6 @@
 		8BE50F671C887E95004DEC6F /* YYSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSingleton.h; sourceTree = "<group>"; };
 		8BFAF7A31C90021B00750B58 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		8BFAF7A41C90021B00750B58 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
-		8BFAF7A61C9005C900750B58 /* YYDealsTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealsTopMenu.h; sourceTree = "<group>"; };
-		8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealsTopMenu.m; sourceTree = "<group>"; };
-		8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDealsTopMenu.xib; sourceTree = "<group>"; };
 		8BFBFBE81C89ECE800621099 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		8BFBFBE91C89ECE800621099 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		8BFBFBEA1C89ECE800621099 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
@@ -226,6 +239,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194312A61D78322C00343627 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				194312A71D78322C00343627 /* MBProgressHUD+MJ.h */,
+				194312A81D78322C00343627 /* MBProgressHUD+MJ.m */,
+				194312A91D78322C00343627 /* MBProgressHUD.bundle */,
+				194312AA1D78322C00343627 /* MBProgressHUD.h */,
+				194312AB1D78322C00343627 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		194312B11D7835E500343627 /* DealsTopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				194312B21D7835E500343627 /* YYDealsTopMenu.h */,
+				194312B31D7835E500343627 /* YYDealsTopMenu.m */,
+				194312B41D7835E500343627 /* YYDealsTopMenu.xib */,
+			);
+			path = DealsTopMenu;
+			sourceTree = "<group>";
+		};
+		194312B51D7835E500343627 /* DropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				194312B61D7835E500343627 /* YYDropDownSubCell.h */,
+				194312B71D7835E500343627 /* YYDropDownSubCell.m */,
+				194312B81D7835E500343627 /* YYDropDownView.h */,
+				194312B91D7835E500343627 /* YYDropDownView.m */,
+				194312BA1D7835E500343627 /* YYDropDownView.xib */,
+				194312BB1D7835E500343627 /* YYDropDownViewMainCell.h */,
+				194312BC1D7835E500343627 /* YYDropDownViewMainCell.m */,
+			);
+			path = DropDownView;
+			sourceTree = "<group>";
+		};
 		19BD15B91D6C3AED0083F7F7 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +436,7 @@
 		8BE50F521C8868AB004DEC6F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				194312AF1D7832C000343627 /* Foundation+Log.m */,
 				3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */,
 				3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */,
 				8BFAF7A31C90021B00750B58 /* UIBarButtonItem+Extension.h */,
@@ -402,6 +452,7 @@
 		8BE50F531C8868AB004DEC6F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				194312A61D78322C00343627 /* MBProgressHUD */,
 				8BFD65C71C8C6AF900AC5F22 /* AwesomeMenu */,
 				8BFBFBE71C89ECE800621099 /* MJExtension */,
 				8BE50F541C8868AB004DEC6F /* dianpingapi */,
@@ -504,16 +555,10 @@
 		8BFD65B81C8C5E6100AC5F22 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1978992A1D6AE0A000096096 /* YYDropDownSubCell.h */,
-				1978992B1D6AE0A000096096 /* YYDropDownSubCell.m */,
-				8BFAF7A61C9005C900750B58 /* YYDealsTopMenu.h */,
-				8BFAF7A71C9005C900750B58 /* YYDealsTopMenu.m */,
-				8BFAF7A91C9005D400750B58 /* YYDealsTopMenu.xib */,
-				28DA27B41CE5BCFE0046A69A /* YYDropDownView.h */,
-				28DA27B51CE5BCFE0046A69A /* YYDropDownView.m */,
-				28DA27B71CE5BD1D0046A69A /* YYDropDownView.xib */,
-				197899301D6AEF3300096096 /* YYDropDownViewMainCell.h */,
-				197899311D6AEF3300096096 /* YYDropDownViewMainCell.m */,
+				194312B11D7835E500343627 /* DealsTopMenu */,
+				194312B51D7835E500343627 /* DropDownView */,
+				194312C31D78360600343627 /* YYDealCell.h */,
+				194312C41D78360600343627 /* YYDealCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,18 +677,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194312AD1D78322C00343627 /* MBProgressHUD.bundle in Resources */,
 				19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */,
+				194312C11D7835E500343627 /* YYDropDownView.xib in Resources */,
 				28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */,
 				8B2C2A7C1C61A19E00614D69 /* LaunchScreen.storyboard in Resources */,
 				3ADF85661C919C2300A77AA4 /* YYSortsViewController.xib in Resources */,
 				19BD15BF1D6C3AED0083F7F7 /* cities.plist in Resources */,
+				194312BE1D7835E500343627 /* YYDealsTopMenu.xib in Resources */,
 				19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */,
 				8BFD65BA1C8C5F3400AC5F22 /* Assets.xcassets in Resources */,
 				19BD15BE1D6C3AED0083F7F7 /* categories.plist in Resources */,
 				8B2C2A771C61A19E00614D69 /* Main.storyboard in Resources */,
 				19BD15C01D6C3AED0083F7F7 /* cityGroups.plist in Resources */,
-				28DA27B81CE5BD1D0046A69A /* YYDropDownView.xib in Resources */,
-				8BFAF7AA1C9005D400750B58 /* YYDealsTopMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,11 +720,12 @@
 				8B8E18631C8C7DEC0074D6F3 /* YYSort.m in Sources */,
 				8BFD65C61C8C6ACE00AC5F22 /* UIView+Extension.m in Sources */,
 				8B8E185B1C8C7D4E0074D6F3 /* YYFindDealsParam.m in Sources */,
+				194312BD1D7835E500343627 /* YYDealsTopMenu.m in Sources */,
 				3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */,
+				194312AE1D78322C00343627 /* MBProgressHUD.m in Sources */,
 				8BE50F641C88718F004DEC6F /* YYAPITool.m in Sources */,
 				19BD15C41D6C56820083F7F7 /* YYCitySearchViewController.m in Sources */,
 				8BE50F5E1C8868AB004DEC6F /* DPAPI.m in Sources */,
-				1978992D1D6AE0A000096096 /* YYDropDownSubCell.m in Sources */,
 				8BFBFC051C89ECE800621099 /* MJType.m in Sources */,
 				3ADF856C1C919C5700A77AA4 /* YYRegionsViewController.m in Sources */,
 				8BFD65C51C8C6ACE00AC5F22 /* UIView+AutoLayout.m in Sources */,
@@ -686,7 +733,8 @@
 				8BFBFC001C89ECE800621099 /* MJConst.m in Sources */,
 				8BFBFC011C89ECE800621099 /* MJFoundation.m in Sources */,
 				8BFBFC0C1C89ED1900621099 /* YYDealTool.m in Sources */,
-				28DA27B61CE5BCFE0046A69A /* YYDropDownView.m in Sources */,
+				194312AC1D78322C00343627 /* MBProgressHUD+MJ.m in Sources */,
+				194312BF1D7835E500343627 /* YYDropDownSubCell.m in Sources */,
 				8BFBFC041C89ECE800621099 /* MJMethod.m in Sources */,
 				8BFBFC091C89ECE800621099 /* NSObject+MJMember.m in Sources */,
 				8BFD65BD1C8C69B300AC5F22 /* YYMainNavigationController.m in Sources */,
@@ -696,8 +744,8 @@
 				8B8E18661C8C7E280074D6F3 /* YYCity.m in Sources */,
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
 				3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */,
+				194312C01D7835E500343627 /* YYDropDownView.m in Sources */,
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
-				8BFAF7A81C9005C900750B58 /* YYDealsTopMenu.m in Sources */,
 				8B8E18591C8C7D4E0074D6F3 /* YYBusiness.m in Sources */,
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
 				8BFD65CC1C8C6AF900AC5F22 /* AwesomeMenu.m in Sources */,
@@ -705,14 +753,16 @@
 				19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */,
 				8BFD65C01C8C6A8200AC5F22 /* YYDealsViewController.m in Sources */,
 				8B8E186C1C8C7E640074D6F3 /* YYCityGroup.m in Sources */,
+				194312C21D7835E500343627 /* YYDropDownViewMainCell.m in Sources */,
 				8B8E18691C8C7E460074D6F3 /* YYRegion.m in Sources */,
+				194312C51D78360600343627 /* YYDealCell.m in Sources */,
 				8BFAF7A51C90021B00750B58 /* UIBarButtonItem+Extension.m in Sources */,
 				8B8E185A1C8C7D4E0074D6F3 /* YYDeal.m in Sources */,
 				8B8E18601C8C7DAC0074D6F3 /* YYCategory.m in Sources */,
 				8BE50F611C8868AB004DEC6F /* ViewController.m in Sources */,
 				8B8E186F1C8C7EC40074D6F3 /* YYMetaDataTool.m in Sources */,
-				197899321D6AEF3300096096 /* YYDropDownViewMainCell.m in Sources */,
 				8BFBFC071C89ECE800621099 /* NSObject+MJCoding.m in Sources */,
+				194312B01D7832C000343627 /* Foundation+Log.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
