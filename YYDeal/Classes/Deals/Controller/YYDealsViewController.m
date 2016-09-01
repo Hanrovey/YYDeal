@@ -13,6 +13,10 @@
 #import "YYCategoriesViewController.h"
 #import "YYRegionsViewController.h"
 #import "YYSortsViewController.h"
+#import "YYCity.h"
+#import "YYRegion.h"
+#import "YYSort.h"
+#import "YYCategory.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -30,6 +34,19 @@
 @property (strong, nonatomic) UIPopoverController *regionPopover;
 /** 排序Popover */
 @property (strong, nonatomic) UIPopoverController *sortPopover;
+
+/** 选中的状态 */
+@property (nonatomic, strong) YYCity *selectedCity;
+/** 当前选中的区域 */
+@property (strong, nonatomic) YYRegion *selectedRegion;
+/** 当前选中的子区域名称 */
+@property (copy, nonatomic) NSString *selectedSubRegionName;
+/** 当前选中的排序 */
+@property (strong, nonatomic) YYSort *selectedSort;
+/** 当前选中的分类 */
+@property (strong, nonatomic) YYCategory *selectedCategory;
+/** 当前选中的子分类名称 */
+@property (copy, nonatomic) NSString *selectedSubCategoryName;
 @end
 
 @implementation YYDealsViewController
@@ -50,10 +67,10 @@
         YYRegionsViewController *rv = [[YYRegionsViewController alloc] init];
         self.regionPopover = [[UIPopoverController alloc] initWithContentViewController:rv];
         
-        __weak typeof(self) weakSelf = self;
-        rv.changeCityBlock = ^{
-            [weakSelf.regionPopover dismissPopoverAnimated:YES];
-        };
+//        __weak typeof(self) weakSelf = self;
+//        rv.changeCityBlock = ^{
+//            [weakSelf.regionPopover dismissPopoverAnimated:YES];
+//        };
     }
     return _regionPopover;
 }
@@ -71,6 +88,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 监听通知
+    [self setupNotifications];
+    
     // 添加导航栏右边内容
     [self setupNavRight];
     
@@ -79,6 +99,76 @@
     
     // 用户菜单
     [self setupUserMenu];
+}
+
+#pragma mark - 通知处理
+/** 监听通知 */
+- (void)setupNotifications
+{
+    YYAddObsver(cityDidSelect:, YYCityDidSelectNotification);
+    YYAddObsver(sortDidSelect:, YYSortDidSelectNotification);
+//    YYAddObsver(categoryDidSelect:, YYCategoryDidSelectNotification);
+//    YYAddObsver(regionDidSelect:, YYRegionDidSelectNotification);
+}
+
+- (void)dealloc
+{
+    YYRemoveObsver;
+}
+
+//- (void)regionDidSelect:(NSNotification *)note
+//{
+//    // 取出通知中的数据
+//    self.selectedRegion = note.userInfo[HMSelectedRegion];
+//    self.selectedSubRegionName = note.userInfo[HMSelectedSubRegionName];
+//    
+//    // 设置菜单数据
+//    self.regionMenu.titleLabel.text = [NSString stringWithFormat:@"%@ - %@", self.selectedCity.name, self.selectedRegion.name];
+//    self.regionMenu.subtitleLabel.text = self.selectedSubRegionName;
+//    
+//    // 关闭popover
+//    [self.regionPopover dismissPopoverAnimated:YES];
+//}
+//
+//- (void)categoryDidSelect:(NSNotification *)note
+//{
+//    // 取出通知中的数据
+//    self.selectedCategory = note.userInfo[YYSelectedCategory];
+//    self.selectedSubCategoryName = note.userInfo[HMSelectedSubCategoryName];
+//    
+//    // 设置菜单数据
+//    self.categoryMenu.imageButton.image = self.selectedCategory.icon;
+//    self.categoryMenu.imageButton.highlightedImage = self.selectedCategory.highlighted_icon;
+//    self.categoryMenu.titleLabel.text = self.selectedCategory.name;
+//    self.categoryMenu.subtitleLabel.text = self.selectedSubCategoryName;
+//    
+//    // 关闭popover
+//    [self.categoryPopover dismissPopoverAnimated:YES];
+//}
+//
+
+- (void)cityDidSelect:(NSNotification *)note
+{
+    // 取出通知中的数据
+    self.selectedCity = note.userInfo[YYSelectedCity];
+    
+    self.regionMenu.titleLable.text = self.selectedCity.name;
+    self.regionMenu.subTitleLable.text = @"全部";
+    
+    // 更换显示的区域数据
+    YYRegionsViewController *regionsVc = (YYRegionsViewController *)self.regionPopover.contentViewController;
+    regionsVc.regions = self.selectedCity.regions;
+}
+
+- (void)sortDidSelect:(NSNotification *)note
+{
+    // 取出通知中的数据
+    YYSort *selectedSort = note.userInfo[YYSelectedSort];
+    
+    self.sortMenu.subTitleLable.text = selectedSort.label;
+    
+    // 销毁popover
+    [self.sortPopover dismissPopoverAnimated:YES];
 }
 
 

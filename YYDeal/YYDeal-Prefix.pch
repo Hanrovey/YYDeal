@@ -28,8 +28,17 @@
 #define YYCityDidSelectNotification @"YYCityDidSelectNotification"
 #define YYSelectedCity @"YYSelectedCity"
 
-#define YYNotificationCenter [NSNotificationCenter defaultCenter]
+#define YYCategoryDidSelectNotification @"YYCategoryDidSelectNotification"
+#define YYSelectedCategory @"YYSelectedCategory"
+#define YYSelectedSubCategoryName @"YYSelectedSubCategoryName"
 
+#define YYRegionDidSelectNotification @"YYRegionDidSelectNotification"
+#define YYSelectedRegion @"YYSelectedRegion"
+#define YYSelectedSubRegionName @"YYSelectedSubRegionName"
+
+#define YYNotificationCenter [NSNotificationCenter defaultCenter]
+#define YYAddObsver(methodName, noteName) [YYNotificationCenter addObserver:self selector:@selector(methodName) name:noteName object:nil];
+#define YYRemoveObsver [YYNotificationCenter removeObserver:self];
 #endif
 
 

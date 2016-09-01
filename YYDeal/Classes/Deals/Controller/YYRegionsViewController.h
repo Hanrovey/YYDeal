@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface YYRegionsViewController : UIViewController
-@property(nonatomic, copy) void (^changeCityBlock)();
+//@property(nonatomic, copy) void (^changeCityBlock)();
+
+@property (nonatomic, strong) NSArray *regions;
+
 @end
