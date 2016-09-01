@@ -15,14 +15,14 @@
                     <rect key="frame" x="5" y="5" width="1" height="30"/>
                     <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh5-1i-irV" userLabel="标题">
-                    <rect key="frame" x="40" y="0.0" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客家" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh5-1i-irV" userLabel="标题">
+                    <rect key="frame" x="40" y="0.0" width="83" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="火锅" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJc-4b-B0a" userLabel="子标题">
-                    <rect key="frame" x="40" y="19" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="火锅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJc-4b-B0a" userLabel="子标题">
+                    <rect key="frame" x="40" y="19" width="102" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -41,10 +41,10 @@
                 <constraint firstItem="lJc-4b-B0a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="HBq-mP-yts"/>
                 <constraint firstItem="XL9-jI-U1Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SAr-42-2dK"/>
                 <constraint firstItem="Gh5-1i-irV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b95-mj-e1n"/>
-                <constraint firstAttribute="trailing" secondItem="Gh5-1i-irV" secondAttribute="trailing" constant="68" id="bnC-OK-WwO"/>
+                <constraint firstAttribute="trailing" secondItem="Gh5-1i-irV" secondAttribute="trailing" constant="27" id="bnC-OK-WwO"/>
                 <constraint firstItem="lJc-4b-B0a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="d8i-A3-kaP"/>
                 <constraint firstAttribute="trailing" secondItem="XL9-jI-U1Z" secondAttribute="trailing" id="eJw-H8-hKE"/>
-                <constraint firstAttribute="trailing" secondItem="lJc-4b-B0a" secondAttribute="trailing" constant="68" id="j9l-Hs-Saf"/>
+                <constraint firstAttribute="trailing" secondItem="lJc-4b-B0a" secondAttribute="trailing" constant="8" id="j9l-Hs-Saf"/>
                 <constraint firstAttribute="bottom" secondItem="XL9-jI-U1Z" secondAttribute="bottom" id="kzD-BG-Pfz"/>
                 <constraint firstAttribute="bottom" secondItem="Gh5-1i-irV" secondAttribute="bottom" constant="19" id="tdS-zv-h0F"/>
             </constraints>

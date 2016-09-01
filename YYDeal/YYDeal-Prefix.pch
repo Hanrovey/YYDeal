@@ -37,8 +37,8 @@
 #define YYSelectedSubRegionName @"YYSelectedSubRegionName"
 
 #define YYNotificationCenter [NSNotificationCenter defaultCenter]
-#define YYAddObsver(methodName, noteName) [YYNotificationCenter addObserver:self selector:@selector(methodName) name:noteName object:nil];
-#define YYRemoveObsver [YYNotificationCenter removeObserver:self];
+#define YYAddObserver(methodName, noteName) [YYNotificationCenter addObserver:self selector:@selector(methodName) name:noteName object:nil];
+#define YYRemoveObserver [YYNotificationCenter removeObserver:self];
 #endif
 
 

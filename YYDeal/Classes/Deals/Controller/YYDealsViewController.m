@@ -105,47 +105,47 @@
 /** 监听通知 */
 - (void)setupNotifications
 {
-    YYAddObsver(cityDidSelect:, YYCityDidSelectNotification);
-    YYAddObsver(sortDidSelect:, YYSortDidSelectNotification);
-//    YYAddObsver(categoryDidSelect:, YYCategoryDidSelectNotification);
-//    YYAddObsver(regionDidSelect:, YYRegionDidSelectNotification);
+    YYAddObserver(cityDidSelect:, YYCityDidSelectNotification);
+    YYAddObserver(sortDidSelect:, YYSortDidSelectNotification);
+    YYAddObserver(categoryDidSelect:, YYCategoryDidSelectNotification);
+    YYAddObserver(regionDidSelect:, YYRegionDidSelectNotification);
 }
 
 - (void)dealloc
 {
-    YYRemoveObsver;
+    YYRemoveObserver;
 }
 
-//- (void)regionDidSelect:(NSNotification *)note
-//{
-//    // 取出通知中的数据
-//    self.selectedRegion = note.userInfo[HMSelectedRegion];
-//    self.selectedSubRegionName = note.userInfo[HMSelectedSubRegionName];
-//    
-//    // 设置菜单数据
-//    self.regionMenu.titleLabel.text = [NSString stringWithFormat:@"%@ - %@", self.selectedCity.name, self.selectedRegion.name];
-//    self.regionMenu.subtitleLabel.text = self.selectedSubRegionName;
-//    
-//    // 关闭popover
-//    [self.regionPopover dismissPopoverAnimated:YES];
-//}
-//
-//- (void)categoryDidSelect:(NSNotification *)note
-//{
-//    // 取出通知中的数据
-//    self.selectedCategory = note.userInfo[YYSelectedCategory];
-//    self.selectedSubCategoryName = note.userInfo[HMSelectedSubCategoryName];
-//    
-//    // 设置菜单数据
-//    self.categoryMenu.imageButton.image = self.selectedCategory.icon;
-//    self.categoryMenu.imageButton.highlightedImage = self.selectedCategory.highlighted_icon;
-//    self.categoryMenu.titleLabel.text = self.selectedCategory.name;
-//    self.categoryMenu.subtitleLabel.text = self.selectedSubCategoryName;
-//    
-//    // 关闭popover
-//    [self.categoryPopover dismissPopoverAnimated:YES];
-//}
-//
+- (void)regionDidSelect:(NSNotification *)note
+{
+    // 取出通知中的数据
+    self.selectedRegion = note.userInfo[YYSelectedRegion];
+    self.selectedSubRegionName = note.userInfo[YYSelectedSubRegionName];
+    
+    // 设置菜单数据
+    self.regionMenu.titleLable.text = [NSString stringWithFormat:@"%@ - %@", self.selectedCity.name, self.selectedRegion.name];
+    self.regionMenu.subTitleLable.text = self.selectedSubRegionName;
+    
+    // 关闭popover
+    [self.regionPopover dismissPopoverAnimated:YES];
+}
+
+- (void)categoryDidSelect:(NSNotification *)note
+{
+    // 取出通知中的数据
+    self.selectedCategory = note.userInfo[YYSelectedCategory];
+    self.selectedSubCategoryName = note.userInfo[YYSelectedSubCategoryName];
+    
+    // 设置菜单数据
+    self.categoryMenu.imageButton.image = self.selectedCategory.icon;
+    self.categoryMenu.imageButton.highlightedImage = self.selectedCategory.highlighted_icon;
+    self.categoryMenu.titleLable.text = self.selectedCategory.name;
+    self.categoryMenu.subTitleLable.text = self.selectedSubCategoryName;
+    
+    // 关闭popover
+    [self.categoryPopover dismissPopoverAnimated:YES];
+}
+
 
 - (void)cityDidSelect:(NSNotification *)note
 {
@@ -225,12 +225,20 @@
     
     // 3.区域
     YYDealsTopMenu *regionMenu = [YYDealsTopMenu menu];
+    regionMenu.imageButton.image = @"icon_district";
+    regionMenu.imageButton.highlightedImage = @"icon_district_highlighted";
+    regionMenu.titleLable.text = @"区域";
+    regionMenu.subTitleLable.text = @"全部";
     [regionMenu addTarget:self action:@selector(regionMenuClick)];
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc] initWithCustomView:regionMenu];
     self.regionMenu = regionMenu;
     
     // 4.排序
     YYDealsTopMenu *sortMenu = [YYDealsTopMenu menu];
+    sortMenu.imageButton.image = @"icon_sort";
+    sortMenu.imageButton.highlightedImage = @"icon_sort_highlighted";
+    sortMenu.titleLable.text = @"排序";
+    sortMenu.subTitleLable.text = @"默认排序";
     [sortMenu addTarget:self action:@selector(sortMenuClick)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortMenu];
     self.sortMenu = sortMenu;

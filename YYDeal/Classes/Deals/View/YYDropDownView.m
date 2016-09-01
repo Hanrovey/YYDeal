@@ -85,14 +85,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.mainTable)
+    if (tableView == self.mainTable)//左边的主表
     {
         // 刷新右边
         [self.subTable reloadData];
         
-    }else
-    {
+        if ([self.delegate respondsToSelector:@selector(dropDownView:didSelectMain:)])
+        {
+            [self.delegate dropDownView:self didSelectMain:indexPath.row];
+        }
         
+    }else//右边的子表
+    {
+        if ([self.delegate respondsToSelector:@selector(dropDownView:didSelectSub:ofMain:)])
+        {
+            int mainRow = [self.mainTable indexPathForSelectedRow].row;
+            [self.delegate dropDownView:self didSelectSub:indexPath.row ofMain:mainRow];
+        }
     }
 }
 
