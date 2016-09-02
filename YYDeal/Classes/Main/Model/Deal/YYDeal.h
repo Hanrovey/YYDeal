@@ -30,7 +30,7 @@
 @property (strong, nonatomic) NSArray *categories;
 
 /** 团购当前已购买数 */
-@property (assign, nonatomic) float purchase_count;
+@property (assign, nonatomic) int purchase_count;
 
 /** 团购发布上线日期 */
 @property (copy, nonatomic) NSString *publish_date;
@@ -39,11 +39,11 @@
 
 /** 团购图片链接，最大图片尺寸450×280 */
 @property (copy, nonatomic) NSString *image_url;
-@property (copy, nonatomic) NSString *more_image_urls;
+@property (strong, nonatomic) NSArray *more_image_urls;
 
 /** 小尺寸团购图片链接，最大图片尺寸160×100 */
 @property (copy, nonatomic) NSString *s_image_url;
-@property (copy, nonatomic) NSString *more_s_image_urls;
+@property (strong, nonatomic) NSArray *more_s_image_urls;
 
 /** 团购Web页面链接，适用于网页应用 */
 @property (copy, nonatomic) NSString *deal_url;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YYDeal;
 @interface YYDealCell : UICollectionViewCell
-
+@property (strong, nonatomic) YYDeal *deal;
 @end

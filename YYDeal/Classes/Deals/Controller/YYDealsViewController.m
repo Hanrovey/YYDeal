@@ -20,6 +20,7 @@
 #import "YYFindDealsParam.h"
 #import "YYDealTool.h"
 #import "YYDealCell.h"
+#import "YYDeal.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -50,9 +51,21 @@
 @property (strong, nonatomic) YYCategory *selectedCategory;
 /** 当前选中的子分类名称 */
 @property (copy, nonatomic) NSString *selectedSubCategoryName;
+/** 存放所有的团购数据 */
+@property (strong, nonatomic) NSMutableArray *deals;
+
+
 @end
 
 @implementation YYDealsViewController
+#pragma mark - 懒加载
+- (NSMutableArray *)deals
+{
+    if (_deals == nil) {
+        self.deals = [NSMutableArray array];
+    }
+    return _deals;
+}
 
 - (UIPopoverController *)categoryPopover
 {
@@ -216,13 +229,20 @@
         }
     }
     // 设置单次返回的数量
-    param.limit = @(2);
+//    param.limit = @(2);
     
     NSLog(@"%@",param.keyValues);
     
     [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
         
-        NSLog(@"%@",result.keyValues);
+        // 清空数据
+        [self.deals removeAllObjects];
+        
+        // 添加新的数据
+        [self.deals addObjectsFromArray:result.deals];
+        
+        // 刷新表格
+        [self.collectionView reloadData];
         
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
@@ -235,9 +255,7 @@
 }
 
 #pragma mark - 导航栏右边处理
-/**
- *  添加导航栏右边
- */
+/**  添加导航栏右边 */
 - (void)setupNavRight
 {
     // 搜索
@@ -253,26 +271,20 @@
     self.navigationItem.rightBarButtonItems = @[mapItem, searchItem];
 }
 
-/**
- *  搜索
- */
+/**  搜索 */
 - (void)searchClick
 {
     
 }
 
-/**
- *  地图
- */
+/**  地图 */
 - (void)mapClick
 {
     
 }
 
 #pragma mark - 导航栏左边处理
-/**
- *  添加导航栏左边
- */
+/** 添加导航栏左边 */
 - (void)setupNavLeft
 {
     // 1.Logo
@@ -334,7 +346,6 @@
     [self.sortPopover presentPopoverFromRect:self.sortMenu.bounds inView:self.sortMenu permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-
 /** 创建一个path菜单item  */
 - (AwesomeMenuItem *)itemWithContent:(NSString *)content highlightedContent:(NSString *)highlightedContent
 {
@@ -342,9 +353,7 @@
     return [[AwesomeMenuItem alloc] initWithImage:itemBg highlightedImage:nil ContentImage:[UIImage imageNamed:content] highlightedContentImage:[UIImage imageNamed:highlightedContent]];
 }
 
-/**
- *  用户菜单
- */
+/**  用户菜单 */
 - (void)setupUserMenu
 {
     // 1.周边的item
@@ -412,13 +421,14 @@
 #pragma mark - 数据源方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.deals.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     YYDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
-    NSLog(@"%@", cell);
+    YYDeal *deal = self.deals[indexPath.item];
+    cell.deal = deal;
     return cell;
     
 }
