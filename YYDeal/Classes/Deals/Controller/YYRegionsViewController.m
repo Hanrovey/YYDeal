@@ -72,14 +72,25 @@
 
 - (IBAction)changeCity:(UIButton *)sender
 {
-    // 1.关闭popover
-    UIPopoverController *popover = [self valueForKeyPath:@"_popoverController"];
-    [popover dismissPopoverAnimated:YES];
+    // 1.关闭所在的popover(利用KVC可以访问任何属性和成员变量)
+//    UIPopoverController *popover = [self valueForKeyPath:@"popoverController"];
+//    [popover dismissPopoverAnimated:YES];
     
-    // 2.弹出城市列表
+    
+    // 1.弹出城市列表
     YYCitiesViewController *cityVC = [[YYCitiesViewController alloc] init];
     cityVC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:cityVC animated:YES completion:nil];
+    
+    // 2.关闭popover
+    //    UIPopoverController *popover = [self valueForKeyPath:@"_popoverController"];
+    //    [popover dismissPopoverAnimated:YES];
+//    if (self.changeCityBlock)
+//    {
+//        self.changeCityBlock();
+//        
+//        NSLog(@"%@",self.changeCityBlock);
+//    }
 }
 
 #pragma mark - YYDropDownViewDelegate

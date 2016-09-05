@@ -10,6 +10,8 @@
 @class YYRegion;
 @interface YYRegionsViewController : UIViewController
 
+@property (copy, nonatomic) void (^changeCityBlock)();
+
 @property (nonatomic, strong) NSArray *regions;
 /** 当前选中的分类 */
 @property (strong, nonatomic) YYRegion *selectedRegion;
