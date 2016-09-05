@@ -117,6 +117,50 @@
     [self setupUserMenu];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
+}
+
+#pragma mark - 处理屏幕的旋转
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+#warning 这里要注意：由于是即将旋转，最后的宽度就是现在的高度
+    // 总宽度
+    CGFloat totalWidth = self.view.height;
+    [self setupLayout:totalWidth orientation:toInterfaceOrientation];
+}
+
+/**
+ *  调整布局
+ *
+ *  @param totalWidth 总宽度
+ *  @param orientation 显示的方向
+ */
+- (void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation
+{
+    // 总列数
+    int column = UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3;
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+
+    // 每一行的最小间距
+    CGFloat lineSpacing = 25;
+    // 每一列的最小间距
+    CGFloat interitemSpacing = (totalWidth - column * layout.itemSize.width) / (column + 1);
+    
+    layout.minimumLineSpacing = lineSpacing;
+    layout.minimumInteritemSpacing = interitemSpacing;
+    
+    // 设置cell与CollectionView边缘的间距
+    layout.sectionInset = UIEdgeInsetsMake(lineSpacing, interitemSpacing, lineSpacing, interitemSpacing);
+    
+}
+
+
+
 #pragma mark - 通知处理
 /** 监听通知 */
 - (void)setupNotifications
@@ -182,6 +226,8 @@
     // 更换显示的区域数据
     YYRegionsViewController *regionsVc = (YYRegionsViewController *)self.regionPopover.contentViewController;
     regionsVc.regions = self.selectedCity.regions;
+    
+    [self.regionPopover dismissPopoverAnimated:YES];
     
     // 加载最新的数据
     [self loadNewDeals];
@@ -394,6 +440,9 @@
     
     // 设置代理
     menu.delegate = self;
+    
+    // 设置透明度
+    menu.alpha = 0.1;
 }
 
 #pragma mark - 菜单代理
@@ -402,6 +451,11 @@
     // 显示xx图片
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
     menu.highlightedContentImage = [UIImage imageNamed:@"icon_pathMenu_cross_highlighted"];
+    
+    // 设置透明度
+    [UIView animateWithDuration:0.5 animations:^{
+        menu.alpha = 1.0;
+    }];
 }
 
 - (void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu
@@ -410,6 +464,10 @@
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
     menu.highlightedContentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"];
 
+    // 设置透明度
+    [UIView animateWithDuration:0.5 animations:^{
+        menu.alpha = 0.1;
+    }];
 }
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
