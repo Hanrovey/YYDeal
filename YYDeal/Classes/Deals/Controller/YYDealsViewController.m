@@ -350,9 +350,6 @@
         // 如果请求过期了，直接返回
         if(param != self.lastParam) return ;
         
-        // 清空数据
-        [self.deals removeAllObjects];
-        
         // 添加新的数据
         [self.deals addObjectsFromArray:result.deals];
         
