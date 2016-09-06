@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Deals View Controller-->
@@ -64,8 +65,8 @@
                                                     <color key="textColor" red="0.7843137255" green="0.21176470589999999" blue="0.019607843140000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-6d-ltQ" userLabel="原价">
-                                                    <rect key="frame" x="60" y="80" width="40" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiY-6d-ltQ" userLabel="原价" customClass="YYCenterLineLable">
+                                                    <rect key="frame" x="70" y="80" width="40" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="mp8-69-QCc"/>
                                                         <constraint firstAttribute="height" constant="15" id="vjt-Mu-Zv7"/>
@@ -87,7 +88,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="FiY-6d-ltQ" firstAttribute="leading" secondItem="4gv-jd-95q" secondAttribute="trailing" id="8Ae-ko-D3e"/>
+                                                <constraint firstItem="FiY-6d-ltQ" firstAttribute="leading" secondItem="4gv-jd-95q" secondAttribute="trailing" constant="10" id="8Ae-ko-D3e"/>
                                                 <constraint firstItem="Pj2-OI-7Zc" firstAttribute="top" secondItem="7LE-UM-TEU" secondAttribute="bottom" constant="5" id="9JV-ns-psN"/>
                                                 <constraint firstAttribute="bottom" secondItem="FiY-6d-ltQ" secondAttribute="bottom" id="GpG-V6-KPG"/>
                                                 <constraint firstItem="7LE-UM-TEU" firstAttribute="top" secondItem="Pgp-VS-G5F" secondAttribute="top" id="UEQ-Zz-ve1"/>
@@ -101,6 +102,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="rt3-lp-Ceh" secondAttribute="bottom" id="tmk-Fi-7fq"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_deal_new" translatesAutoresizingMaskIntoConstraints="NO" id="Y1n-Ma-Css">
+                                            <rect key="frame" x="8" y="8" width="38" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="38" id="KaO-lE-xac"/>
+                                                <constraint firstAttribute="height" constant="24" id="uPW-mE-DJr"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -110,16 +118,21 @@
                                     <constraint firstItem="k6T-A3-jqq" firstAttribute="leading" secondItem="qZq-lj-yxQ" secondAttribute="leading" constant="5" id="Dzf-L3-XDF"/>
                                     <constraint firstItem="Pgp-VS-G5F" firstAttribute="top" secondItem="k6T-A3-jqq" secondAttribute="bottom" constant="10" id="Y8t-HS-mio"/>
                                     <constraint firstItem="k6T-A3-jqq" firstAttribute="top" secondItem="qZq-lj-yxQ" secondAttribute="top" constant="5" id="eF3-7a-KmH"/>
+                                    <constraint firstItem="Y1n-Ma-Css" firstAttribute="top" secondItem="qZq-lj-yxQ" secondAttribute="topMargin" id="h08-aa-RhK"/>
                                     <constraint firstAttribute="trailing" secondItem="k6T-A3-jqq" secondAttribute="trailing" constant="5" id="lq1-NH-YWe"/>
                                     <constraint firstAttribute="trailing" secondItem="Pgp-VS-G5F" secondAttribute="trailing" constant="10" id="oxV-UC-xlC"/>
+                                    <constraint firstItem="Y1n-Ma-Css" firstAttribute="leading" secondItem="qZq-lj-yxQ" secondAttribute="leadingMargin" id="pr0-qB-hox"/>
                                     <constraint firstAttribute="bottom" secondItem="Pgp-VS-G5F" secondAttribute="bottom" constant="10" id="xyf-ZO-YRk"/>
                                 </constraints>
                                 <size key="customSize" width="305" height="305"/>
                                 <connections>
                                     <outlet property="currentPriceLabel" destination="4gv-jd-95q" id="NLR-cC-2wq"/>
+                                    <outlet property="currentPriceWidth" destination="aQi-LH-2xM" id="EWZ-Gn-lrU"/>
+                                    <outlet property="dealNewView" destination="Y1n-Ma-Css" id="78A-lr-Khs"/>
                                     <outlet property="descLabel" destination="Pj2-OI-7Zc" id="Fy6-WR-bED"/>
                                     <outlet property="imageView" destination="k6T-A3-jqq" id="zyE-yN-gPa"/>
                                     <outlet property="listPriceLabel" destination="FiY-6d-ltQ" id="JK8-GM-5M6"/>
+                                    <outlet property="listPriceWidth" destination="mp8-69-QCc" id="1Ck-H2-QJz"/>
                                     <outlet property="purchaseCountLabel" destination="rt3-lp-Ceh" id="Rfc-qP-84b"/>
                                     <outlet property="titleLabel" destination="7LE-UM-TEU" id="986-qV-w0z"/>
                                 </connections>
@@ -156,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_deal_new" width="38" height="24"/>
         <image name="placeholder_deal" width="273" height="172"/>
     </resources>
 </document>

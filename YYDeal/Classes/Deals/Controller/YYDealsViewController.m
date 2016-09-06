@@ -21,6 +21,8 @@
 #import "YYDealTool.h"
 #import "YYDealCell.h"
 #import "YYDeal.h"
+#import "YYEmptyView.h"
+#import "MJRefresh.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -54,11 +56,26 @@
 /** 存放所有的团购数据 */
 @property (strong, nonatomic) NSMutableArray *deals;
 
-
+/** 没有数据时显示的view */
+@property (nonatomic, weak) YYEmptyView *emptyView;
+/** 请求参数 */
+@property (nonatomic, strong) YYFindDealsParam *lastParam;
 @end
 
 @implementation YYDealsViewController
+
 #pragma mark - 懒加载
+- (YYEmptyView *)emptyView
+{
+    if (_emptyView == nil) {
+        YYEmptyView *emptyView = [[YYEmptyView alloc] init];
+        emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
+        [self.view addSubview:emptyView];
+        self.emptyView = emptyView;
+    }
+    return _emptyView;
+}
+
 - (NSMutableArray *)deals
 {
     if (_deals == nil) {
@@ -115,6 +132,9 @@
     
     // 用户菜单
     [self setupUserMenu];
+    
+    // 集成刷新控件
+    [self setupRefresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -122,6 +142,15 @@
     [super viewDidAppear:animated];
     
     [self setupLayout:self.view.width orientation:self.interfaceOrientation];
+}
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDeals)];
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDeals)];
 }
 
 #pragma mark - 处理屏幕的旋转
@@ -250,6 +279,78 @@
 #pragma mark - 刷新数据
 - (void)loadNewDeals
 {
+    
+    // 请求参数
+    YYFindDealsParam *param = [self buildParam];
+    
+    [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
+        
+        // 清空数据
+        [self.deals removeAllObjects];
+        
+        // 添加新的数据
+        [self.deals addObjectsFromArray:result.deals];
+        
+        // 刷新表格
+        [self.collectionView reloadData];
+        
+        // 关闭刷新控件
+        [self.collectionView.mj_header endRefreshing];
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
+        
+        // 关闭刷新控件
+        [self.collectionView.mj_header endRefreshing];
+
+    }];
+    
+    // 保存上次请求参数
+    self.lastParam = param;
+}
+
+- (void)loadMoreDeals
+{
+    // 请求参数
+    YYFindDealsParam *param = [self buildParam];
+    
+    // 设置页码
+    param.page = @(self.lastParam.page.intValue + 1);
+    
+    [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
+        
+        // 清空数据
+        [self.deals removeAllObjects];
+        
+        // 添加新的数据
+        [self.deals addObjectsFromArray:result.deals];
+        
+        // 刷新表格
+        [self.collectionView reloadData];
+        
+        // 关闭刷新控件
+        [self.collectionView.mj_footer endRefreshing];
+        
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
+        
+        // 关闭刷新控件
+        [self.collectionView.mj_footer endRefreshing];
+
+        
+        // 回滚页码
+        param.page = @(param.page.intValue - 1);
+    }];
+    
+    // 配置请求参数
+    self.lastParam = param;
+}
+
+/**
+ *  配置请求参数
+ */
+- (YYFindDealsParam *)buildParam
+{
     YYFindDealsParam *param = [[YYFindDealsParam alloc] init];
     // 城市名称
     param.city = self.selectedCity.name;
@@ -275,29 +376,14 @@
         }
     }
     // 设置单次返回的数量
-//    param.limit = @(2);
+    //    param.limit = @(2);
     
-    NSLog(@"%@",param.keyValues);
+    //    NSLog(@"%@",param.keyValues);
     
-    [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
-        
-        // 清空数据
-        [self.deals removeAllObjects];
-        
-        // 添加新的数据
-        [self.deals addObjectsFromArray:result.deals];
-        
-        // 刷新表格
-        [self.collectionView reloadData];
-        
-    } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
-    }];
-}
-
-- (void)loadMoreDeals
-{
+    // 设置默认请求页码
+    param.page = @1;
     
+    return param;
 }
 
 #pragma mark - 导航栏右边处理
@@ -479,6 +565,8 @@
 #pragma mark - 数据源方法
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+#warning 控制emptyView的可见性
+    self.emptyView.hidden = self.deals.count > 0;
     return self.deals.count;
 }
 
