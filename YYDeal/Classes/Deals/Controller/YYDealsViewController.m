@@ -23,6 +23,7 @@
 #import "YYDeal.h"
 #import "YYEmptyView.h"
 #import "MJRefresh.h"
+#import "YYDealDetailController.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -617,7 +618,12 @@
 }
 
 #pragma mark - 代理方法
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    YYDealDetailController *deailVC = [[YYDealDetailController alloc] init];
+    deailVC.deal = self.deals[indexPath.item];
+    [self presentViewController:deailVC animated:YES completion:nil];
+}
 
 #pragma mark - 设置导航栏
 

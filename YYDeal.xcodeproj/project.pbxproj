@@ -45,6 +45,8 @@
 		1910E6851D7E792E0031C1E1 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1910E66F1D7E792E0031C1E1 /* UIScrollView+MJExtension.m */; };
 		1910E6861D7E792E0031C1E1 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1910E6711D7E792E0031C1E1 /* UIScrollView+MJRefresh.m */; };
 		1910E6871D7E792E0031C1E1 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1910E6731D7E792E0031C1E1 /* UIView+MJExtension.m */; };
+		1910E68F1D7EB0B10031C1E1 /* YYDealDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1910E68D1D7EB0B10031C1E1 /* YYDealDetailController.m */; };
+		1910E6901D7EB0B10031C1E1 /* YYDealDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1910E68E1D7EB0B10031C1E1 /* YYDealDetailController.xib */; };
 		194312AC1D78322C00343627 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312A81D78322C00343627 /* MBProgressHUD+MJ.m */; };
 		194312AD1D78322C00343627 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 194312A91D78322C00343627 /* MBProgressHUD.bundle */; };
 		194312AE1D78322C00343627 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312AB1D78322C00343627 /* MBProgressHUD.m */; };
@@ -206,6 +208,9 @@
 		1910E6711D7E792E0031C1E1 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		1910E6721D7E792E0031C1E1 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		1910E6731D7E792E0031C1E1 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		1910E68C1D7EB0B10031C1E1 /* YYDealDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealDetailController.h; sourceTree = "<group>"; };
+		1910E68D1D7EB0B10031C1E1 /* YYDealDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealDetailController.m; sourceTree = "<group>"; };
+		1910E68E1D7EB0B10031C1E1 /* YYDealDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYDealDetailController.xib; sourceTree = "<group>"; };
 		194312A71D78322C00343627 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		194312A81D78322C00343627 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		194312A91D78322C00343627 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -498,6 +503,24 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		1910E68A1D7EB0840031C1E1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1910E68B1D7EB0850031C1E1 /* Controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		1910E68B1D7EB0850031C1E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1910E68C1D7EB0B10031C1E1 /* YYDealDetailController.h */,
+				1910E68D1D7EB0B10031C1E1 /* YYDealDetailController.m */,
+				1910E68E1D7EB0B10031C1E1 /* YYDealDetailController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		194312A61D78322C00343627 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +670,7 @@
 		8BE50F4C1C8868AB004DEC6F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1910E68A1D7EB0840031C1E1 /* Detail */,
 				8BFD65B51C8C5E6100AC5F22 /* Deals */,
 				8BE50F4D1C8868AB004DEC6F /* Main */,
 				8BE50F4F1C8868AB004DEC6F /* Other */,
@@ -941,6 +965,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1910E6901D7EB0B10031C1E1 /* YYDealDetailController.xib in Resources */,
 				194312AD1D78322C00343627 /* MBProgressHUD.bundle in Resources */,
 				19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */,
 				1910E6821D7E792E0031C1E1 /* MJRefresh.bundle in Resources */,
@@ -1019,6 +1044,7 @@
 				1910E67F1D7E792E0031C1E1 /* MJRefreshGifHeader.m in Sources */,
 				190D96861D796EBA009D0343 /* SDImageCache.m in Sources */,
 				1910E6761D7E792E0031C1E1 /* MJRefreshComponent.m in Sources */,
+				1910E68F1D7EB0B10031C1E1 /* YYDealDetailController.m in Sources */,
 				1910E67D1D7E792E0031C1E1 /* MJRefreshBackNormalFooter.m in Sources */,
 				190D96841D796EBA009D0343 /* MKAnnotationView+WebCache.m in Sources */,
 				1910E6831D7E792E0031C1E1 /* MJRefreshConst.m in Sources */,
