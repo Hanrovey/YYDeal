@@ -22,6 +22,16 @@
 #import "UIButton+Extension.h"
 #import "MBProgressHUD+MJ.h"
 
+/** 自定义打印 */
+#ifdef DEBUG
+#define YYLog(...) NSLog(__VA_ARGS__)
+#else
+#define YYLog(...)
+#endif
+
+#define YYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+/** 全局颜色 */
+#define YYGlobalBg YYColor(230, 230, 230)
 
 /** 通知 */
 #define YYSortDidSelectNotification @"YYSortDidSelectNotification"

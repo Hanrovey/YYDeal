@@ -60,6 +60,9 @@
 @property (nonatomic, weak) YYEmptyView *emptyView;
 /** 请求参数 */
 @property (nonatomic, strong) YYFindDealsParam *lastParam;
+
+/**  存储请求结果的总数 */
+@property (nonatomic, assign) int totalNumber;
 @end
 
 @implementation YYDealsViewController
@@ -70,7 +73,7 @@
     if (_emptyView == nil) {
         YYEmptyView *emptyView = [[YYEmptyView alloc] init];
         emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
-        [self.view addSubview:emptyView];
+        [self.view insertSubview:emptyView belowSubview:self.collectionView];
         self.emptyView = emptyView;
     }
     return _emptyView;
@@ -121,6 +124,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // 设置控制器view属性
+    [self setupBaseView];
+    
     // 监听通知
     [self setupNotifications];
     
@@ -143,6 +150,17 @@
     
     [self setupLayout:self.view.width orientation:self.interfaceOrientation];
 }
+
+- (void)setupBaseView
+{
+    // 设置颜色
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    // 垂直方向上永远有弹簧效果
+    self.collectionView.alwaysBounceVertical = YES;
+    
+    self.view.backgroundColor = YYGlobalBg;
+}
+
 
 /**
  *  集成刷新控件
@@ -285,6 +303,12 @@
     
     [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
         
+        // 如果请求过期了，直接返回
+        if(param != self.lastParam) return ;
+        
+        // 记录总数
+        self.totalNumber = result.total_count;
+        
         // 清空数据
         [self.deals removeAllObjects];
         
@@ -298,6 +322,10 @@
         [self.collectionView.mj_header endRefreshing];
         
     } failure:^(NSError *error) {
+        
+        // 如果请求过期了，直接返回
+        if(param != self.lastParam) return ;
+        
         [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
         
         // 关闭刷新控件
@@ -319,6 +347,9 @@
     
     [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
         
+        // 如果请求过期了，直接返回
+        if(param != self.lastParam) return ;
+        
         // 清空数据
         [self.deals removeAllObjects];
         
@@ -332,6 +363,10 @@
         [self.collectionView.mj_footer endRefreshing];
         
     } failure:^(NSError *error) {
+        
+        // 如果请求过期了，直接返回
+        if(param != self.lastParam) return ;
+        
         [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
         
         // 关闭刷新控件
@@ -563,10 +598,15 @@
 
 
 #pragma mark - 数据源方法
+#warning 如果要在数据个数发生的改变时做出响应，那么响应操作可以考虑在数据源方法中实现
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
 #warning 控制emptyView的可见性
     self.emptyView.hidden = self.deals.count > 0;
+    
+    // 尾部控件的可见性
+    self.collectionView.mj_footer.hidden = (self.deals.count == self.totalNumber);
+    
     return self.deals.count;
 }
 
