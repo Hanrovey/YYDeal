@@ -11,6 +11,7 @@
 #import "YYRestriction.h"
 #import "YYCenterLineLable.h"
 #import "YYDealTool.h"
+#import "UIImageView+WebCache.h"
 @interface YYDealDetailController ()<UIWebViewDelegate>
 - (IBAction)back;
 - (IBAction)buy;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet YYCenterLineLable *listPriceLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
 
 
 // 按钮
@@ -113,6 +115,9 @@
     self.refundableAnyTimeButton.selected = self.deal.restrictions.is_refundable;
     self.refundableExpiresButton.selected = self.deal.restrictions.is_refundable;
     self.purchaseCountButton.title = [NSString stringWithFormat:@"已售出%d", self.deal.purchase_count];
+    
+    // 图片
+    [self.iconView setImageWithURL:[NSURL URLWithString:self.deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
 }
 
 
