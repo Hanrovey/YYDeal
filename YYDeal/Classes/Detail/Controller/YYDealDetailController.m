@@ -146,6 +146,8 @@
         webView.scrollView.hidden = NO;
         // 移除圈圈
         [self.loadingView removeFromSuperview];
+        
+        
     } else { // 加载初始网页完毕
         NSString *js = [NSString stringWithFormat:@"window.location.href = '%@';", urlStr];
         [webView stringByEvaluatingJavaScriptFromString:js];
