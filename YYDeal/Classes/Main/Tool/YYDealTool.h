@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "YYFindDealsParam.h"
 #import "YYFindDealsResult.h"
+#import "YYGetSingleDealParam.h"
+#import "YYGetSingleDealResult.h"
 @interface YYDealTool : NSObject
 /**
  *  搜索团购
@@ -18,4 +20,9 @@
  *  @param failure 请求失败后的回调
  */
 + (void)findDeals:(YYFindDealsParam *)params success:(void (^)(YYFindDealsResult *result))success failure:(void (^)(NSError *error))failure;
+
+/**
+ *  获得指定团购（获得单个团购信息）
+ */
++ (void)getSingleDeal:(YYGetSingleDealParam *)param success:(void (^)(YYGetSingleDealResult *result))success failure:(void (^)(NSError *error))failure;
 @end

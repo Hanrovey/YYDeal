@@ -38,12 +38,12 @@
     // 描述
     self.descLabel.text = deal.desc;
     // 现价
-    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%.0f", deal.current_price];
+    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@", deal.current_price];
     // 1弥补小误差
     self.currentPriceWidth.constant = [self.currentPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.currentPriceLabel.font}].width + 1;
     
     // 原价
-    self.listPriceLabel.text = [NSString stringWithFormat:@"￥%.0f", deal.list_price];
+    self.listPriceLabel.text = [NSString stringWithFormat:@"￥%@", deal.list_price];
     // 1弥补小误差
     self.listPriceWidth.constant = [self.listPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.listPriceLabel.font}].width + 1;
     

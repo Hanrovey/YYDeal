@@ -23,4 +23,15 @@
         
     } failure:failure];
 }
+
++ (void)getSingleDeal:(YYGetSingleDealParam *)param success:(void (^)(YYGetSingleDealResult *result))success failure:(void (^)(NSError *error))failure
+{
+    [[YYAPITool sharedAPITool] requestWithUrl:@"v1/deal/get_single_deal" param:param.keyValues success:^(id json) {
+        if (success)
+        {
+            YYGetSingleDealResult *obj = [YYGetSingleDealResult objectWithKeyValues:json];
+            success(obj);
+        }
+    } failure:failure];
+}
 @end

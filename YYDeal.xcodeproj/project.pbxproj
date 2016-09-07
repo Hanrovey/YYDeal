@@ -65,6 +65,9 @@
 		19BD15C01D6C3AED0083F7F7 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BC1D6C3AED0083F7F7 /* cityGroups.plist */; };
 		19BD15C11D6C3AED0083F7F7 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BD1D6C3AED0083F7F7 /* sorts.plist */; };
 		19BD15C41D6C56820083F7F7 /* YYCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */; };
+		19E051071D7FFAAD007912F6 /* YYRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E051061D7FFAAD007912F6 /* YYRestriction.m */; };
+		19E0510B1D7FFC48007912F6 /* YYGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0510A1D7FFC48007912F6 /* YYGetSingleDealParam.m */; };
+		19E0510E1D7FFC6A007912F6 /* YYGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0510D1D7FFC6A007912F6 /* YYGetSingleDealResult.m */; };
 		28DA27BA1CE5C29B0046A69A /* YYRegionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */; };
 		3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */; };
 		3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF85631C919C2300A77AA4 /* YYSortsViewController.m */; };
@@ -238,6 +241,12 @@
 		19BD15BD1D6C3AED0083F7F7 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		19BD15C21D6C56820083F7F7 /* YYCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitySearchViewController.h; sourceTree = "<group>"; };
 		19BD15C31D6C56820083F7F7 /* YYCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitySearchViewController.m; sourceTree = "<group>"; };
+		19E051051D7FFAAD007912F6 /* YYRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRestriction.h; sourceTree = "<group>"; };
+		19E051061D7FFAAD007912F6 /* YYRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRestriction.m; sourceTree = "<group>"; };
+		19E051091D7FFC48007912F6 /* YYGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYGetSingleDealParam.h; sourceTree = "<group>"; };
+		19E0510A1D7FFC48007912F6 /* YYGetSingleDealParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYGetSingleDealParam.m; sourceTree = "<group>"; };
+		19E0510C1D7FFC6A007912F6 /* YYGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYGetSingleDealResult.h; sourceTree = "<group>"; };
+		19E0510D1D7FFC6A007912F6 /* YYGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYGetSingleDealResult.m; sourceTree = "<group>"; };
 		28DA27B91CE5C29B0046A69A /* YYRegionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYRegionsViewController.xib; sourceTree = "<group>"; };
 		3A5A66DC1C96D478008C8DD3 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		3A5A66DD1C96D478008C8DD3 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
@@ -568,6 +577,17 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		19E051081D7FFC32007912F6 /* GetSingleDeal */ = {
+			isa = PBXGroup;
+			children = (
+				19E051091D7FFC48007912F6 /* YYGetSingleDealParam.h */,
+				19E0510A1D7FFC48007912F6 /* YYGetSingleDealParam.m */,
+				19E0510C1D7FFC6A007912F6 /* YYGetSingleDealResult.h */,
+				19E0510D1D7FFC6A007912F6 /* YYGetSingleDealResult.m */,
+			);
+			path = GetSingleDeal;
+			sourceTree = "<group>";
+		};
 		8B2C2A601C61A19E00614D69 = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +655,8 @@
 				8B8E18511C8C7D4E0074D6F3 /* YYBusiness.m */,
 				8B8E18521C8C7D4E0074D6F3 /* YYDeal.h */,
 				8B8E18531C8C7D4E0074D6F3 /* YYDeal.m */,
+				19E051051D7FFAAD007912F6 /* YYRestriction.h */,
+				19E051061D7FFAAD007912F6 /* YYRestriction.m */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -791,6 +813,7 @@
 		8BFBFC0D1C89EDAE00621099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19E051081D7FFC32007912F6 /* GetSingleDeal */,
 				8B8E185D1C8C7D860074D6F3 /* MetaData */,
 				8B8E184F1C8C7D4E0074D6F3 /* Deal */,
 				8B8E18541C8C7D4E0074D6F3 /* FindDeals */,
@@ -1014,6 +1037,7 @@
 				8BFD65C61C8C6ACE00AC5F22 /* UIView+Extension.m in Sources */,
 				8B8E185B1C8C7D4E0074D6F3 /* YYFindDealsParam.m in Sources */,
 				194312BD1D7835E500343627 /* YYDealsTopMenu.m in Sources */,
+				19E051071D7FFAAD007912F6 /* YYRestriction.m in Sources */,
 				3ADF85691C919C4400A77AA4 /* YYCategoriesViewController.m in Sources */,
 				194312AE1D78322C00343627 /* MBProgressHUD.m in Sources */,
 				1910E67C1D7E792E0031C1E1 /* MJRefreshBackGifFooter.m in Sources */,
@@ -1052,9 +1076,11 @@
 				8BFBFC061C89ECE800621099 /* MJTypeEncoding.m in Sources */,
 				8BFBFC031C89ECE800621099 /* MJMember.m in Sources */,
 				8BE50F5F1C8868AB004DEC6F /* DPRequest.m in Sources */,
+				19E0510B1D7FFC48007912F6 /* YYGetSingleDealParam.m in Sources */,
 				8B8E18661C8C7E280074D6F3 /* YYCity.m in Sources */,
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
 				3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */,
+				19E0510E1D7FFC6A007912F6 /* YYGetSingleDealResult.m in Sources */,
 				194312C01D7835E500343627 /* YYDropDownView.m in Sources */,
 				1910E62B1D7E74BF0031C1E1 /* YYEmptyView.m in Sources */,
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
