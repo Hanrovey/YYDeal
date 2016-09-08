@@ -177,7 +177,7 @@
         image = self.iconView.image;
     }
     
-    [UMSocialSnsService presentSnsController:self appKey:UMAppKey shareText:text shareImage:image shareToSnsNames:@[UMShareToSina, UMShareToQQ] delegate:nil];
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAppKey shareText:text shareImage:image shareToSnsNames:@[UMShareToSina, UMShareToQQ] delegate:nil];
 }
 
 
