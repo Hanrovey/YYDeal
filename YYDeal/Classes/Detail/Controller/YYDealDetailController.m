@@ -12,6 +12,7 @@
 #import "YYCenterLineLable.h"
 #import "YYDealTool.h"
 #import "UIImageView+WebCache.h"
+#import "UMSocial.h"
 @interface YYDealDetailController ()<UIWebViewDelegate>
 - (IBAction)back;
 - (IBAction)buy;
@@ -167,6 +168,16 @@
 }
 
 - (IBAction)share {
+    
+    NSString *text = [NSString stringWithFormat:@"【%@】%@ 详情查看：%@", self.deal.title, self.deal.desc, self.deal.deal_url];
+    
+    // 需要分享的图片（不分享占位图片）
+    UIImage *image = nil;
+    if (self.iconView.image != [UIImage imageNamed:@"placeholder_deal"]) {
+        image = self.iconView.image;
+    }
+    
+    [UMSocialSnsService presentSnsController:self appKey:UMAppKey shareText:text shareImage:image shareToSnsNames:@[UMShareToSina, UMShareToQQ] delegate:nil];
 }
 
 

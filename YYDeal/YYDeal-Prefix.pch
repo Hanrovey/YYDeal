@@ -53,7 +53,12 @@
 #define YYRemoveObserver [YYNotificationCenter removeObserver:self];
 
 /** 友盟Appkey */
-#define UmengAppkey @"57cfd977e0f55a7d1f001356"
+#define UMAppKey @"57cfd977e0f55a7d1f001356"
+
+/** Sina Appkey && Secret */
+#define SinaAppKey @"4020160657"
+#define SinaSecret @"81b96077aeefedd522c2b562b74543c0"
+
 #endif
 
 
