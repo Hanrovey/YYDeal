@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YYSingleton.h"
-@class YYCity;
+@class YYCity,YYSort;
 @interface YYMetaDataTool : NSObject
 
 YYSingletonH(MetaDataTool)
@@ -32,4 +32,31 @@ YYSingletonH(MetaDataTool)
 
 - (YYCity *)cityWithName:(NSString *)name;
 
+/**
+ *  存储选中的城市名称
+ */
+- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的区域
+// */
+//- (void)saveSelectedRegion:(hm *)name;
+///**
+// *  存储选中的子区域名字
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的分类
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+///**
+// *  存储选中的子分类名字
+// */
+//- (void)saveSelectedCityName:(NSString *)name;
+/**
+ *  存储选中的排序
+ */
+- (void)saveSelectedSort:(YYSort *)sort;
+
+- (YYCity *)selectedCity;
+- (YYSort *)selectedSort;
 @end

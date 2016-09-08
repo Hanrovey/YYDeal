@@ -19,4 +19,7 @@
 {
     return self.subregions;
 }
+
+// MJcoping协议
+MJCodingImplementation
 @end

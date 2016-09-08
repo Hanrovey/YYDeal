@@ -10,5 +10,6 @@
 #import "YYSort.h"
 
 @implementation YYSort
-
+// MJcoping协议
+MJCodingImplementation
 @end

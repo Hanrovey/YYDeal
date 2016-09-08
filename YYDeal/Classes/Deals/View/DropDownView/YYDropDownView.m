@@ -69,7 +69,8 @@
     }else{
         
         // 得到mainTableView选中的行
-        int mainRow = [self.mainTable indexPathForSelectedRow].row;
+        NSInteger mainRow = [self.mainTable indexPathForSelectedRow].row;
+        if (mainRow < 0) return 0;
         id<YYDropDownViewItem> item = self.items[mainRow];
         return [item subtitles].count;
     }

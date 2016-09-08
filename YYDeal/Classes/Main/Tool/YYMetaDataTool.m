@@ -12,17 +12,19 @@
 #import "YYSort.h"
 #import "YYCityGroup.h"
 
+#define YYSelectedCityNamesFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"selected_city_names.plist"]
+#define YYSelectedSortFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"selected_sort.data"]
 @interface YYMetaDataTool()
 {
     /** 所有的分类 */
     NSArray *_categories;
     /** 所有的城市 */
     NSArray *_cities;
-    /** 所有的城市组 */
-    NSArray *_cityGroups;
     /** 所有的排序 */
     NSArray *_sorts;
 }
+
+@property (nonatomic, strong) NSMutableArray *selectedCityNames;
 @end
 
 @implementation YYMetaDataTool
@@ -38,10 +40,21 @@ YYSingletonM(MetaDataTool)
 
 - (NSArray *)cityGroups
 {
-    if (!_cityGroups) {
-        _cityGroups = [YYCityGroup objectArrayWithFilename:@"cityGroups.plist"];
+        
+    NSMutableArray *cityGroups = [NSMutableArray array];
+    
+    // 添加最近访问
+    if (self.selectedCityNames.count) {
+        YYCityGroup *recentCityGroup = [[YYCityGroup alloc] init];
+        recentCityGroup.title = @"最近";
+        recentCityGroup.cities = self.selectedCityNames;
+        [cityGroups addObject:recentCityGroup];
     }
-    return _cityGroups;
+    
+    // 添加plist里面的城市组数据
+    NSArray *plistCityGroups = [YYCityGroup objectArrayWithFilename:@"cityGroups.plist"];
+    [cityGroups addObjectsFromArray:plistCityGroups];
+    return cityGroups;
 }
 
 - (NSArray *)cities
@@ -71,6 +84,42 @@ YYSingletonM(MetaDataTool)
     return nil;
 }
 
+#pragma mark - 存储方法
+- (void)saveSelectedCityName:(NSString *)name
+{
+    if (name.length == 0) return;
+    
+    // 存储城市名字
+    [self.selectedCityNames removeObject:name];
+    [self.selectedCityNames insertObject:name atIndex:0];
+    
+    // 写入plist
+    [self.selectedCityNames writeToFile:YYSelectedCityNamesFile atomically:YES];
+}
 
+- (void)saveSelectedSort:(YYSort *)sort
+{
+    if (sort == nil) return;
+    
+    [NSKeyedArchiver archiveRootObject:sort toFile:YYSelectedSortFile];
+}
 
+- (YYCity *)selectedCity
+{
+    NSString *cityName = [self.selectedCityNames firstObject];
+    YYCity *city = [self cityWithName:cityName];
+    if (city == nil) {
+        city = [self cityWithName:@"上海"];
+    }
+    return city;
+}
+
+- (YYSort *)selectedSort
+{
+    YYSort *sort = [NSKeyedUnarchiver unarchiveObjectWithFile:YYSelectedSortFile];
+    if (sort == nil) {
+        sort = [self.sorts firstObject];
+    }
+    return sort;
+}
 @end

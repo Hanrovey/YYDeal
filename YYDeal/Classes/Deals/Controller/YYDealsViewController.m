@@ -125,6 +125,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //加载上次默认的记录
+    self.selectedCity = [YYMetaDataTool sharedMetaDataTool].selectedCity;
+    YYRegionsViewController *rs = (YYRegionsViewController *)self.regionPopover.contentViewController;
+    rs.regions = self.selectedCity.regions;
+    self.selectedSort = [YYMetaDataTool sharedMetaDataTool].selectedSort;
     
     // 设置控制器view属性
     [self setupBaseView];
@@ -169,6 +174,7 @@
 - (void)setupRefresh
 {
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDeals)];
+    [self.collectionView.mj_header beginRefreshing];
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDeals)];
 }
 
@@ -278,7 +284,10 @@
     [self.regionPopover dismissPopoverAnimated:YES];
     
     // 加载最新的数据
-    [self loadNewDeals];
+    [self.collectionView.mj_header beginRefreshing];
+    
+    // 存储用户选中城市数据到沙河
+    [[YYMetaDataTool sharedMetaDataTool] saveSelectedCityName:self.selectedCity.name];
 }
 
 - (void)sortDidSelect:(NSNotification *)note
@@ -292,7 +301,10 @@
     [self.sortPopover dismissPopoverAnimated:YES];
     
     // 加载最新的数据
-    [self loadNewDeals];
+    [self.collectionView.mj_header beginRefreshing];
+    
+    // 存储用户选中筛选数据到沙河
+    [[YYMetaDataTool sharedMetaDataTool] saveSelectedSort:self.selectedSort];
 }
 
 #pragma mark - 刷新数据
@@ -466,8 +478,7 @@
     YYDealsTopMenu *regionMenu = [YYDealsTopMenu menu];
     regionMenu.imageButton.image = @"icon_district";
     regionMenu.imageButton.highlightedImage = @"icon_district_highlighted";
-    regionMenu.titleLable.text = @"区域";
-    regionMenu.subTitleLable.text = @"全部";
+    regionMenu.titleLable.text = [NSString stringWithFormat:@"%@ - 全部", self.selectedCity.name];
     [regionMenu addTarget:self action:@selector(regionMenuClick)];
     UIBarButtonItem *regionItem = [[UIBarButtonItem alloc] initWithCustomView:regionMenu];
     self.regionMenu = regionMenu;
@@ -477,7 +488,7 @@
     sortMenu.imageButton.image = @"icon_sort";
     sortMenu.imageButton.highlightedImage = @"icon_sort_highlighted";
     sortMenu.titleLable.text = @"排序";
-    sortMenu.subTitleLable.text = @"默认排序";
+    sortMenu.subTitleLable.text = self.selectedSort.label;
     [sortMenu addTarget:self action:@selector(sortMenuClick)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortMenu];
     self.sortMenu = sortMenu;
