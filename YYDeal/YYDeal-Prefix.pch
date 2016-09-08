@@ -51,6 +51,9 @@
 #define YYNotificationCenter [NSNotificationCenter defaultCenter]
 #define YYAddObserver(methodName, noteName) [YYNotificationCenter addObserver:self selector:@selector(methodName) name:noteName object:nil];
 #define YYRemoveObserver [YYNotificationCenter removeObserver:self];
+
+/** 友盟Appkey */
+#define UmengAppkey @"57cfd977e0f55a7d1f001356"
 #endif
 
 
