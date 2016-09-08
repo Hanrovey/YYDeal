@@ -30,6 +30,18 @@
 @implementation YYMetaDataTool
 YYSingletonM(MetaDataTool)
 
+- (NSMutableArray *)selectedCityNames
+{
+    if (!_selectedCityNames) {
+        _selectedCityNames = [NSMutableArray arrayWithContentsOfFile:YYSelectedCityNamesFile];
+        
+        if (!_selectedCityNames) {
+            _selectedCityNames = [NSMutableArray array];
+        }
+    }
+    return _selectedCityNames;
+}
+
 - (NSArray *)categories
 {
     if (!_categories) {
