@@ -1,5 +1,5 @@
 //
-//  YYHistoryViewController.h
+//  YYCollectViewController.h
 //  YYDeal
 //
 //  Created by Ihefe_Hanrovey on 16/9/9.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "YYDealListViewController.h"
-@interface YYHistoryViewController : YYDealListViewController
+@interface YYCollectViewController : YYDealListViewController
 
 @end

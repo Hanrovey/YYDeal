@@ -19,13 +19,11 @@
 #import "YYCategory.h"
 #import "YYFindDealsParam.h"
 #import "YYDealTool.h"
-#import "YYDealCell.h"
 #import "YYDeal.h"
-#import "YYEmptyView.h"
 #import "MJRefresh.h"
-#import "YYDealDetailController.h"
 #import "YYHistoryViewController.h"
 #import "YYMainNavigationController.h"
+#import "YYCollectViewController.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -56,11 +54,8 @@
 @property (strong, nonatomic) YYCategory *selectedCategory;
 /** 当前选中的子分类名称 */
 @property (copy, nonatomic) NSString *selectedSubCategoryName;
-/** 存放所有的团购数据 */
-@property (strong, nonatomic) NSMutableArray *deals;
 
-/** 没有数据时显示的view */
-@property (nonatomic, weak) YYEmptyView *emptyView;
+
 /** 请求参数 */
 @property (nonatomic, strong) YYFindDealsParam *lastParam;
 
@@ -69,26 +64,6 @@
 @end
 
 @implementation YYDealsViewController
-
-#pragma mark - 懒加载
-- (YYEmptyView *)emptyView
-{
-    if (_emptyView == nil) {
-        YYEmptyView *emptyView = [[YYEmptyView alloc] init];
-        emptyView.image = [UIImage imageNamed:@"icon_deals_empty"];
-        [self.view insertSubview:emptyView belowSubview:self.collectionView];
-        self.emptyView = emptyView;
-    }
-    return _emptyView;
-}
-
-- (NSMutableArray *)deals
-{
-    if (_deals == nil) {
-        self.deals = [NSMutableArray array];
-    }
-    return _deals;
-}
 
 - (UIPopoverController *)categoryPopover
 {
@@ -133,9 +108,6 @@
     rs.regions = self.selectedCity.regions;
     self.selectedSort = [YYMetaDataTool sharedMetaDataTool].selectedSort;
     
-    // 设置控制器view属性
-    [self setupBaseView];
-    
     // 监听通知
     [self setupNotifications];
     
@@ -152,23 +124,6 @@
     [self setupRefresh];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self setupLayout:self.view.width orientation:self.interfaceOrientation];
-}
-
-- (void)setupBaseView
-{
-    // 设置颜色
-    self.collectionView.backgroundColor = [UIColor clearColor];
-    // 垂直方向上永远有弹簧效果
-    self.collectionView.alwaysBounceVertical = YES;
-    
-    self.view.backgroundColor = YYGlobalBg;
-}
-
 
 /**
  *  集成刷新控件
@@ -179,43 +134,6 @@
     [self.collectionView.mj_header beginRefreshing];
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDeals)];
 }
-
-#pragma mark - 处理屏幕的旋转
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-#warning 这里要注意：由于是即将旋转，最后的宽度就是现在的高度
-    // 总宽度
-    CGFloat totalWidth = self.view.height;
-    [self setupLayout:totalWidth orientation:toInterfaceOrientation];
-}
-
-/**
- *  调整布局
- *
- *  @param totalWidth 总宽度
- *  @param orientation 显示的方向
- */
-- (void)setupLayout:(CGFloat)totalWidth orientation:(UIInterfaceOrientation)orientation
-{
-    // 总列数
-    int column = UIInterfaceOrientationIsPortrait(orientation) ? 2 : 3;
-    
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-
-    // 每一行的最小间距
-    CGFloat lineSpacing = 25;
-    // 每一列的最小间距
-    CGFloat interitemSpacing = (totalWidth - column * layout.itemSize.width) / (column + 1);
-    
-    layout.minimumLineSpacing = lineSpacing;
-    layout.minimumInteritemSpacing = interitemSpacing;
-    
-    // 设置cell与CollectionView边缘的间距
-    layout.sectionInset = UIEdgeInsetsMake(lineSpacing, interitemSpacing, lineSpacing, interitemSpacing);
-    
-}
-
-
 
 #pragma mark - 通知处理
 /** 监听通知 */
@@ -606,46 +524,36 @@
 {
     [self awesomeMenuWillAnimateClose:menu];
     
-    if (idx == 2)
-    {
+    
+    if (idx == 1)
+    { // 收藏
+        
+        YYCollectViewController *collectVc = [[YYCollectViewController alloc] init];
+        YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:collectVc];
+        [self presentViewController:nav animated:YES completion:nil];
+        
+    } else if (idx == 2)
+    { // 浏览记录
+        
         YYHistoryViewController *historyVc = [[YYHistoryViewController alloc] init];
         YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:historyVc];
         [self presentViewController:nav animated:YES completion:nil];
     }
 }
 
-
 #pragma mark - 数据源方法
-#warning 如果要在数据个数发生的改变时做出响应，那么响应操作可以考虑在数据源方法中实现
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-#warning 控制emptyView的可见性
-    self.emptyView.hidden = self.deals.count > 0;
-    
     // 尾部控件的可见性
     self.collectionView.mj_footer.hidden = (self.deals.count == self.totalNumber);
-    
-    return self.deals.count;
+    return [super collectionView:collectionView numberOfItemsInSection:section];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - 实现父类方法
+- (NSString *)emptyIcon
 {
-    YYDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
-    YYDeal *deal = self.deals[indexPath.item];
-    cell.deal = deal;
-    return cell;
-    
+    return @"icon_deals_empty";
 }
-
-#pragma mark - 代理方法
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    YYDealDetailController *deailVC = [[YYDealDetailController alloc] init];
-    deailVC.deal = self.deals[indexPath.item];
-    [self presentViewController:deailVC animated:YES completion:nil];
-}
-
-#pragma mark - 设置导航栏
 
 
 

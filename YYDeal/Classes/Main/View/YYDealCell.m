@@ -1,14 +1,17 @@
+
+
 //
 //  YYDealCell.m
 //  YYDeal
 //
-//  Created by Ihefe_Hanrovey on 16/9/1.
+//  Created by Ihefe_Hanrovey on 16/9/9.
 //  Copyright © 2016年 Hanrovey. All rights reserved.
 //
 
 #import "YYDealCell.h"
 #import "YYDeal.h"
 #import "UIImageView+WebCache.h"
+
 @interface YYDealCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -16,15 +19,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
-
+/**
+ *  属性名不能以new开头
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *dealNewView;
 
-/** 原价宽度 */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *listPriceWidth;
-/** 现价宽度 */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *currentPriceWidth;
+@property (weak, nonatomic) IBOutlet UIButton *cover;
+@property (weak, nonatomic) IBOutlet UIImageView *check;
+
+- (IBAction)coverClick;
 
 @end
+
 @implementation YYDealCell
 
 - (void)setDeal:(YYDeal *)deal
@@ -32,25 +38,17 @@
     _deal = deal;
     
     // 图片
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
+    [self.imageView setImageWithURL:[NSURL URLWithString:deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
     // 标题
     self.titleLabel.text = deal.title;
     // 描述
     self.descLabel.text = deal.desc;
     // 现价
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@", deal.current_price];
-    // 1弥补小误差
-    self.currentPriceWidth.constant = [self.currentPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.currentPriceLabel.font}].width + 1;
-    
     // 原价
     self.listPriceLabel.text = [NSString stringWithFormat:@"￥%@", deal.list_price];
-    // 1弥补小误差
-    self.listPriceWidth.constant = [self.listPriceLabel.text sizeWithAttributes:@{NSFontAttributeName : self.listPriceLabel.font}].width + 1;
-    
     // 购买数
     self.purchaseCountLabel.text = [NSString stringWithFormat:@"已售出%d", deal.purchase_count];
-    
-    
     
     // 判断是否为最新的团购：发布日期 >= 今天的日期
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
@@ -58,11 +56,29 @@
     NSString *today = [fmt stringFromDate:[NSDate date]];
     // 之前发布的：今天日期 > 发布日期
     self.dealNewView.hidden = ([today compare:deal.publish_date] == NSOrderedDescending);
+    
+//    // 设置编辑状态
+//    if (deal.isEditing) {
+//        self.cover.hidden = NO;
+//    } else {
+//        self.cover.hidden = YES;
+//    }
+//    
+//    // 设置勾选状态
+//    self.check.hidden = !self.deal.isChecking;
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    // 绘制cell的默认背景图
     [[UIImage imageNamed:@"bg_dealcell"] drawInRect:rect];
+}
+
+- (IBAction)coverClick {
+//    self.deal.checking = !self.deal.isChecking;
+    self.check.hidden = !self.check.hidden;
+    
+    if ([self.delegate respondsToSelector:@selector(dealCellDidClickCover:)]) {
+        [self.delegate dealCellDidClickCover:self];
+    }
 }
 @end

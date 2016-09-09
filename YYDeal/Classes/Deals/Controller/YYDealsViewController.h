@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface YYDealsViewController : UICollectionViewController
+#import "YYDealListViewController.h"
+@interface YYDealsViewController : YYDealListViewController
 
 @end

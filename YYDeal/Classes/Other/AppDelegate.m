@@ -10,6 +10,8 @@
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UIImageView+WebCache.h"
+#import "YYMainNavigationController.h"
+#import "YYDealsViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +21,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    self.window = [[UIWindow alloc] init];
+    
+    YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:[YYDealsViewController new]];
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyAndVisible];
+    
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:UMAppKey];
     //第一个参数为新浪appkey,第二个参数为新浪secret，第三个参数是新浪微博回调地址，这里必须要和你在新浪微博后台设置的回调地址一致。
