@@ -19,4 +19,7 @@
 {
     return @{@"desc" : @"description"};
 }
+
+// 遵守codeing协议
+MJCodingImplementation
 @end

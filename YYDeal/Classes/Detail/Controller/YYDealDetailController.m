@@ -13,6 +13,7 @@
 #import "YYDealTool.h"
 #import "UIImageView+WebCache.h"
 #import "UMSocial.h"
+#import "YYDealLocalTool.h"
 @interface YYDealDetailController ()<UIWebViewDelegate>
 - (IBAction)back;
 - (IBAction)buy;
@@ -47,6 +48,9 @@
     // 设置背景
     self.view.backgroundColor = YYGlobalBg;
     self.webView.backgroundColor = YYGlobalBg;
+    
+    // 存储浏览记录
+    [[YYDealLocalTool sharedDealLocalTool] saveHistoryDeal:self.deal];
     
     // 设置左边的内容
     [self setupLeftContent];

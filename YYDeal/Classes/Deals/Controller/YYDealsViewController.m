@@ -24,6 +24,8 @@
 #import "YYEmptyView.h"
 #import "MJRefresh.h"
 #import "YYDealDetailController.h"
+#import "YYHistoryViewController.h"
+#import "YYMainNavigationController.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -603,6 +605,13 @@
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
     [self awesomeMenuWillAnimateClose:menu];
+    
+    if (idx == 2)
+    {
+        YYHistoryViewController *historyVc = [[YYHistoryViewController alloc] init];
+        YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:historyVc];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
 }
 
 

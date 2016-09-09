@@ -9,5 +9,6 @@
 #import "YYRestriction.h"
 
 @implementation YYRestriction
-
+// 遵守codeing协议
+MJCodingImplementation
 @end

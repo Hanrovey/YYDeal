@@ -13,4 +13,7 @@
 {
     return @{@"ID" : @"id"};
 }
+
+// 遵守codeing协议
+MJCodingImplementation
 @end
