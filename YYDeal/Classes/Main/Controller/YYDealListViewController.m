@@ -22,7 +22,7 @@
 - (YYEmptyView *)emptyView
 {
     if (_emptyView == nil) {
-        YYEmptyView *emptyView = [[YYEmptyView alloc] init];
+        YYEmptyView *emptyView = [YYEmptyView emptyView];
         emptyView.image = [UIImage imageNamed:self.emptyIcon];
         [self.view insertSubview:emptyView belowSubview:self.collectionView];
         self.emptyView = emptyView;

@@ -23,7 +23,6 @@
 #import "MJRefresh.h"
 #import "YYHistoryViewController.h"
 #import "YYMainNavigationController.h"
-#import "YYCollectViewController.h"
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -528,9 +527,9 @@
     if (idx == 1)
     { // 收藏
         
-        YYCollectViewController *collectVc = [[YYCollectViewController alloc] init];
-        YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:collectVc];
-        [self presentViewController:nav animated:YES completion:nil];
+//        YYCollectViewController *collectVc = [[YYCollectViewController alloc] init];
+//        YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:collectVc];
+//        [self presentViewController:nav animated:YES completion:nil];
         
     } else if (idx == 2)
     { // 浏览记录

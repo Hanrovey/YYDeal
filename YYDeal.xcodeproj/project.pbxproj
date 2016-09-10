@@ -92,7 +92,6 @@
 		19D566B51D82BBA000C7F2E4 /* YYDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D566B31D82BBA000C7F2E4 /* YYDealCell.xib */; };
 		19D566B81D82BBDB00C7F2E4 /* YYDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D566B71D82BBDB00C7F2E4 /* YYDealCell.m */; };
 		19D566BB1D82BCA000C7F2E4 /* YYDealListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D566BA1D82BCA000C7F2E4 /* YYDealListViewController.m */; };
-		19D566BE1D82C30A00C7F2E4 /* YYCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D566BD1D82C30A00C7F2E4 /* YYCollectViewController.m */; };
 		19E051071D7FFAAD007912F6 /* YYRestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E051061D7FFAAD007912F6 /* YYRestriction.m */; };
 		19E0510B1D7FFC48007912F6 /* YYGetSingleDealParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0510A1D7FFC48007912F6 /* YYGetSingleDealParam.m */; };
 		19E0510E1D7FFC6A007912F6 /* YYGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0510D1D7FFC6A007912F6 /* YYGetSingleDealResult.m */; };
@@ -322,8 +321,6 @@
 		19D566B71D82BBDB00C7F2E4 /* YYDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealCell.m; sourceTree = "<group>"; };
 		19D566B91D82BCA000C7F2E4 /* YYDealListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealListViewController.h; sourceTree = "<group>"; };
 		19D566BA1D82BCA000C7F2E4 /* YYDealListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealListViewController.m; sourceTree = "<group>"; };
-		19D566BC1D82C30A00C7F2E4 /* YYCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCollectViewController.h; sourceTree = "<group>"; };
-		19D566BD1D82C30A00C7F2E4 /* YYCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCollectViewController.m; sourceTree = "<group>"; };
 		19E051051D7FFAAD007912F6 /* YYRestriction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRestriction.h; sourceTree = "<group>"; };
 		19E051061D7FFAAD007912F6 /* YYRestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRestriction.m; sourceTree = "<group>"; };
 		19E051091D7FFC48007912F6 /* YYGetSingleDealParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYGetSingleDealParam.h; sourceTree = "<group>"; };
@@ -677,8 +674,6 @@
 			children = (
 				194431961D82547A00DA8A89 /* YYHistoryViewController.h */,
 				194431971D82547A00DA8A89 /* YYHistoryViewController.m */,
-				19D566BC1D82C30A00C7F2E4 /* YYCollectViewController.h */,
-				19D566BD1D82C30A00C7F2E4 /* YYCollectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1314,7 +1309,6 @@
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
 				190D96881D796EBA009D0343 /* SDWebImageDecoder.m in Sources */,
 				8B8E18591C8C7D4E0074D6F3 /* YYBusiness.m in Sources */,
-				19D566BE1D82C30A00C7F2E4 /* YYCollectViewController.m in Sources */,
 				190D96921D796EBA009D0343 /* UIImageView+WebCache.m in Sources */,
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
 				1910E6871D7E792E0031C1E1 /* UIView+MJExtension.m in Sources */,
