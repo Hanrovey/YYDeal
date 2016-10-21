@@ -134,7 +134,7 @@
     ID = [ID substringFromIndex:[ID rangeOfString:@"-"].location + 1];
     NSString *urlStr = [NSString stringWithFormat:@"http://lite.m.dianping.com/group/deal/moreinfo/%@", ID];
     
-    if ([webView.request.URL.absoluteString isEqualToString:urlStr]) { // 加载详情页面完毕
+    if (![webView.request.URL.absoluteString isEqualToString:urlStr]) { // 加载详情页面完毕
         NSMutableString *js = [NSMutableString string];
         [js appendString:@"var bodyHTML = '';"];
         // 拼接link的内容
