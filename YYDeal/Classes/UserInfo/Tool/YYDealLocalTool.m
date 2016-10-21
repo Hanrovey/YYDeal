@@ -36,9 +36,23 @@ YYSingletonM(DealLocalTool)
 
 - (void)saveHistoryDeal:(YYDeal *)deal
 {
-    
     [self.historyDeals removeObject:deal];
     [self.historyDeals insertObject:deal atIndex:0];
+    
+    // 存进沙盒
+    [NSKeyedArchiver archiveRootObject:self.historyDeals toFile:YYHistoryDealsFile];
+}
+
+- (void)unsaveHistoryDeal:(YYDeal *)deal
+{
+    [self.historyDeals removeObject:deal];
+    [NSKeyedArchiver archiveRootObject:self.historyDeals toFile:YYHistoryDealsFile];
+
+}
+
+- (void)unsaveHistoryDeals:(NSArray *)deals
+{
+    [self.historyDeals removeObjectsInArray:deals];
     
     // 存进沙盒
     [NSKeyedArchiver archiveRootObject:self.historyDeals toFile:YYHistoryDealsFile];
@@ -75,5 +89,12 @@ YYSingletonM(DealLocalTool)
     [NSKeyedArchiver archiveRootObject:self.collectDeals toFile:YYCollectDealsFile];
 }
 
+- (void)unsaveCollectDeals:(NSArray *)deals
+{
+    [self.collectDeals removeObjectsInArray:deals];
+    
+    // 存进沙盒
+    [NSKeyedArchiver archiveRootObject:self.collectDeals toFile:YYCollectDealsFile];
+}
 
 @end

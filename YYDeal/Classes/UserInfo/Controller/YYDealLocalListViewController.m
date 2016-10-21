@@ -168,6 +168,7 @@
  */
 - (void)delete
 {
+    
 }
 
 #pragma mark - YYDealCellDelegate
