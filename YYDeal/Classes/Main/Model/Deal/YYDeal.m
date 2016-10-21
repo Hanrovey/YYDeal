@@ -20,6 +20,11 @@
     return @{@"desc" : @"description"};
 }
 
+- (BOOL)isEqual:(YYDeal *)other
+{
+    return [self.deal_id isEqualToString:other.deal_id];
+}
+
 // 遵守codeing协议
 MJCodingImplementation
 @end

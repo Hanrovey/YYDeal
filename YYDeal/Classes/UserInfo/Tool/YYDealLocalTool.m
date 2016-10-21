@@ -34,9 +34,12 @@ YYSingletonM(DealLocalTool)
 
 - (void)saveHistoryDeal:(YYDeal *)deal
 {
-    [self.historyDeals addObject:deal];
+    
+    [self.historyDeals removeObject:deal];
+    [self.historyDeals insertObject:deal atIndex:0];
     
     // 存进沙盒
     [NSKeyedArchiver archiveRootObject:self.historyDeals toFile:YYHistoryDealsFile];
 }
+
 @end
