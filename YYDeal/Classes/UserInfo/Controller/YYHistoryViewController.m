@@ -38,4 +38,11 @@
     return @"icon_latestBrowse_empty";
 }
 
+/**
+ *  删除
+ */
+- (void)delete
+{
+    
+}
 @end

@@ -10,7 +10,7 @@
 #import "YYDealCell.h"
 #import "YYEmptyView.h"
 #import "YYDealDetailController.h"
-@interface YYDealListViewController ()
+@interface YYDealListViewController ()<YYDealCellDelegate>
 
 /** 没有数据时显示的view */
 @property (nonatomic, weak) YYEmptyView *emptyView;
@@ -121,6 +121,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     YYDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"deal" forIndexPath:indexPath];
+    cell.delegate = self;
     YYDeal *deal = self.deals[indexPath.item];
     cell.deal = deal;
     return cell;

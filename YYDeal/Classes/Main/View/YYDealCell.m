@@ -57,15 +57,15 @@
     // 之前发布的：今天日期 > 发布日期
     self.dealNewView.hidden = ([today compare:deal.publish_date] == NSOrderedDescending);
     
-//    // 设置编辑状态
-//    if (deal.isEditing) {
-//        self.cover.hidden = NO;
-//    } else {
-//        self.cover.hidden = YES;
-//    }
-//    
-//    // 设置勾选状态
-//    self.check.hidden = !self.deal.isChecking;
+    // 设置编辑状态
+    if (deal.isEditing) {
+        self.cover.hidden = NO;
+    } else {
+        self.cover.hidden = YES;
+    }
+    
+    // 设置勾选状态
+    self.check.hidden = !self.deal.isChecking;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -74,8 +74,8 @@
 }
 
 - (IBAction)coverClick {
-//    self.deal.checking = !self.deal.isChecking;
-    self.check.hidden = !self.check.hidden;
+    self.deal.checking = !self.deal.isChecking;
+    self.check.hidden = !self.deal.isChecking;
     
     if ([self.delegate respondsToSelector:@selector(dealCellDidClickCover:)]) {
         [self.delegate dealCellDidClickCover:self];

@@ -38,4 +38,12 @@
 {
     return @"icon_collects_empty";
 }
+
+/**
+ *  删除
+ */
+- (void)delete
+{
+    
+}
 @end
