@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YYDealDetailController">
             <connections>
+                <outlet property="collectButton" destination="ViS-kG-mcK" id="LsC-dP-U2q"/>
                 <outlet property="currentPriceLabel" destination="vVc-rv-jRT" id="5T3-ed-uaa"/>
                 <outlet property="descLabel" destination="5BZ-u2-56M" id="qFo-ZF-XrC"/>
                 <outlet property="iconView" destination="KPk-h5-mSV" id="Xx7-H3-N1K"/>
@@ -27,26 +29,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-da-fCv" userLabel="左边整体">
-                    <rect key="frame" x="0.0" y="0.0" width="410" height="768"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-J3-vXr" userLabel="导航栏">
-                            <rect key="frame" x="0.0" y="0.0" width="410" height="62"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_navigationBar_normal" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-uC-LJA" userLabel="背景">
-                                    <rect key="frame" x="0.0" y="0.0" width="410" height="62"/>
-                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_navigationBar_normal" translatesAutoresizingMaskIntoConstraints="NO" id="iwN-uC-LJA" userLabel="背景"/>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="团购详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpX-nJ-Aax" userLabel="标题">
-                                    <rect key="frame" x="0.0" y="20" width="410" height="42"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-jJ-qD5" userLabel="返回">
-                                    <rect key="frame" x="0.0" y="20" width="44" height="42"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="vLy-Im-dqU"/>
                                     </constraints>
                                     <state key="normal" image="icon_back">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="highlighted" image="icon_back_highlighted"/>
                                     <connections>
@@ -54,7 +50,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="iwN-uC-LJA" secondAttribute="trailing" id="2aO-Kp-SZk"/>
                                 <constraint firstItem="iwN-uC-LJA" firstAttribute="leading" secondItem="IFY-J3-vXr" secondAttribute="leading" id="69g-gw-bNo"/>
@@ -71,10 +67,8 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwh-p6-U9s" userLabel="详情">
-                            <rect key="frame" x="15" y="92" width="380" height="486"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCp-tv-4wb" userLabel="标题">
-                                    <rect key="frame" x="0.0" y="253" width="380" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="yZB-ca-dmB"/>
                                     </constraints>
@@ -82,37 +76,33 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="380" translatesAutoresizingMaskIntoConstraints="NO" id="5BZ-u2-56M" userLabel="描述">
-                                    <rect key="frame" x="0.0" y="293" width="380" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVc-rv-jRT" userLabel="现价">
-                                    <rect key="frame" x="0.0" y="321" width="41" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="M2h-4k-Rdj"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <color key="textColor" red="0.95686274510000002" green="0.27058823529999998" blue="0.027450980390000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="textColor" red="0.9335179328918457" green="0.177581787109375" blue="0.044794589281082153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店价￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiD-co-AEV" userLabel="原价" customClass="YYCenterLineLable">
-                                    <rect key="frame" x="46" y="331" width="70" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="15" id="VDG-B2-idB"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPq-Vq-jVg" userLabel="购买按钮">
-                                    <rect key="frame" x="0.0" y="369" width="200" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="GQF-Xr-Oda"/>
                                         <constraint firstAttribute="height" constant="35" id="uis-8a-VsP"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="立即抢购" backgroundImage="bg_deal_purchaseButton">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="highlighted" backgroundImage="bg_deal_purchaseButton_highlighted"/>
                                     <connections>
@@ -120,13 +110,12 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViS-kG-mcK" userLabel="收藏">
-                                    <rect key="frame" x="225" y="356" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="Ahv-M1-2v4"/>
                                         <constraint firstAttribute="width" constant="60" id="K5e-9n-lak"/>
                                     </constraints>
                                     <state key="normal" image="icon_collect">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="selected" image="icon_collect_highlighted"/>
                                     <state key="highlighted" image="icon_collect_highlighted"/>
@@ -135,13 +124,12 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEc-M8-lYm" userLabel="分享">
-                                    <rect key="frame" x="300" y="356" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="g3i-db-c8w"/>
                                         <constraint firstAttribute="width" constant="60" id="zAd-xK-YYv"/>
                                     </constraints>
                                     <state key="normal" image="icon_share">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <state key="highlighted" image="icon_share_highlighted"/>
                                     <connections>
@@ -149,59 +137,53 @@
                                     </connections>
                                 </button>
                                 <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bi-nO-Ucd" userLabel="分割线">
-                                    <rect key="frame" x="0.0" y="414" width="380" height="1"/>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="mCA-Ah-bPw"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-8z-MH0" userLabel="其他">
-                                    <rect key="frame" x="0.0" y="416" width="380" height="70"/>
                                     <subviews>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I4-nE-PaP" userLabel="是否支持随时退">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="支持随时退" image="icon_order_unrefundable">
-                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <state key="selected" image="icon_order_refundable"/>
                                         </button>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91w-vu-gur" userLabel="剩余时间">
-                                            <rect key="frame" x="190" y="0.0" width="190" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="0天0小时0分" image="icon_deal_timer">
-                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-Ez-1Iv" userLabel="是否支持过期退">
-                                            <rect key="frame" x="0.0" y="35" width="190" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="支持过期退" image="icon_order_unrefundable">
-                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <state key="selected" image="icon_order_refundable"/>
                                         </button>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5At-aP-2Ae" userLabel="销售量">
-                                            <rect key="frame" x="190" y="35" width="190" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="已售0" image="icon_deal_soldNumber">
-                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="5At-aP-2Ae" firstAttribute="top" secondItem="91w-vu-gur" secondAttribute="bottom" id="1Qp-zq-Rco"/>
                                         <constraint firstAttribute="bottom" secondItem="5At-aP-2Ae" secondAttribute="bottom" id="4wN-V3-wmG"/>
@@ -223,14 +205,13 @@
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KPk-h5-mSV" userLabel="详情图片">
-                                    <rect key="frame" x="0.0" y="0.0" width="380" height="233"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="380" id="AXv-uG-Ew5"/>
                                         <constraint firstAttribute="height" constant="233" id="hZw-5c-b7s"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="CiD-co-AEV" firstAttribute="bottom" secondItem="vVc-rv-jRT" secondAttribute="bottom" id="0fn-uY-a2Q"/>
                                 <constraint firstItem="2bi-nO-Ucd" firstAttribute="leading" secondItem="bwh-p6-U9s" secondAttribute="leading" id="0t0-B1-dvX"/>
@@ -267,7 +248,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="bwh-p6-U9s" firstAttribute="leading" secondItem="5Jd-da-fCv" secondAttribute="leading" constant="15" id="0Qd-vq-90s"/>
                         <constraint firstAttribute="trailing" secondItem="bwh-p6-U9s" secondAttribute="trailing" constant="15" id="J02-ut-p9P"/>
@@ -279,11 +260,10 @@
                     </constraints>
                 </view>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-O3-LDZ">
-                    <rect key="frame" x="440" y="20" width="554" height="748"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </webView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="5Jd-da-fCv" secondAttribute="bottom" id="7cs-eT-MGb"/>
                 <constraint firstItem="5Jd-da-fCv" firstAttribute="top" secondItem="8u3-zb-R7s" secondAttribute="top" id="B3k-zk-UWu"/>
@@ -293,14 +273,13 @@
                 <constraint firstAttribute="trailing" secondItem="AZb-O3-LDZ" secondAttribute="trailing" constant="30" id="Wu3-to-ziO"/>
                 <constraint firstAttribute="bottom" secondItem="AZb-O3-LDZ" secondAttribute="bottom" id="egm-ev-J6C"/>
             </constraints>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="258" y="139"/>
         </view>
     </objects>
     <resources>
-        <image name="bg_deal_purchaseButton" width="5" height="5"/>
-        <image name="bg_deal_purchaseButton_highlighted" width="5" height="5"/>
+        <image name="bg_deal_purchaseButton" width="4" height="4"/>
+        <image name="bg_deal_purchaseButton_highlighted" width="4" height="4"/>
         <image name="bg_navigationBar_normal" width="124" height="124"/>
         <image name="icon_back" width="30" height="30"/>
         <image name="icon_back_highlighted" width="30" height="30"/>

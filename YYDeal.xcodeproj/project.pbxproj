@@ -59,6 +59,7 @@
 		194312C21D7835E500343627 /* YYDropDownViewMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194312BC1D7835E500343627 /* YYDropDownViewMainCell.m */; };
 		194431981D82547A00DA8A89 /* YYHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194431971D82547A00DA8A89 /* YYHistoryViewController.m */; };
 		1944319B1D8254C200DA8A89 /* YYDealLocalTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1944319A1D8254C200DA8A89 /* YYDealLocalTool.m */; };
+		194D18EC1DB9ED4C00BD3929 /* YYCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194D18EB1DB9ED4C00BD3929 /* YYCollectViewController.m */; };
 		197766CB1D8101E700EF257D /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 197766B11D8101E700EF257D /* UMSocialLocalizable.strings */; };
 		197766CC1D8101E700EF257D /* libUMSocial_Sdk_5.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 197766BF1D8101E700EF257D /* libUMSocial_Sdk_5.2.1.a */; };
 		197766CD1D8101E700EF257D /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197766C11D8101E700EF257D /* UMSCommentDetailController.xib */; };
@@ -260,6 +261,8 @@
 		194431971D82547A00DA8A89 /* YYHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHistoryViewController.m; sourceTree = "<group>"; };
 		194431991D8254C200DA8A89 /* YYDealLocalTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDealLocalTool.h; sourceTree = "<group>"; };
 		1944319A1D8254C200DA8A89 /* YYDealLocalTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDealLocalTool.m; sourceTree = "<group>"; };
+		194D18EA1DB9ED4C00BD3929 /* YYCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCollectViewController.h; sourceTree = "<group>"; };
+		194D18EB1DB9ED4C00BD3929 /* YYCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCollectViewController.m; sourceTree = "<group>"; };
 		197766B21D8101E700EF257D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		197766B41D8101E700EF257D /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		197766B51D8101E700EF257D /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 			children = (
 				194431961D82547A00DA8A89 /* YYHistoryViewController.h */,
 				194431971D82547A00DA8A89 /* YYHistoryViewController.m */,
+				194D18EA1DB9ED4C00BD3929 /* YYCollectViewController.h */,
+				194D18EB1DB9ED4C00BD3929 /* YYCollectViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1309,6 +1314,7 @@
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
 				190D96881D796EBA009D0343 /* SDWebImageDecoder.m in Sources */,
 				8B8E18591C8C7D4E0074D6F3 /* YYBusiness.m in Sources */,
+				194D18EC1DB9ED4C00BD3929 /* YYCollectViewController.m in Sources */,
 				190D96921D796EBA009D0343 /* UIImageView+WebCache.m in Sources */,
 				8BFBFBFF1C89ECE800621099 /* MJArgument.m in Sources */,
 				1910E6871D7E792E0031C1E1 /* UIView+MJExtension.m in Sources */,

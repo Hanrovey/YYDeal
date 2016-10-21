@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *refundableExpiresButton;
 @property (weak, nonatomic) IBOutlet UIButton *leftTimeButton;
 @property (weak, nonatomic) IBOutlet UIButton *purchaseCountButton;
+@property (weak, nonatomic) IBOutlet UIButton *collectButton;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -51,6 +52,10 @@
     
     // 存储浏览记录
     [[YYDealLocalTool sharedDealLocalTool] saveHistoryDeal:self.deal];
+    
+    // 判断是否收藏
+    NSArray *collectArray = [YYDealLocalTool sharedDealLocalTool].collectDeals;
+    self.collectButton.selected = [collectArray containsObject:self.deal];
     
     // 设置左边的内容
     [self setupLeftContent];
@@ -168,7 +173,19 @@
 - (IBAction)buy {
 }
 
-- (IBAction)collect {
+- (IBAction)collect
+{
+    if (self.collectButton.selected)
+    {
+        [[YYDealLocalTool sharedDealLocalTool] unsaveCollectDeal:self.deal];
+        [MBProgressHUD showSuccess:@"取消收藏成功"];
+    }else
+    {
+        [[YYDealLocalTool sharedDealLocalTool] saveCollectDeal:self.deal];
+        [MBProgressHUD showSuccess:@"收藏成功"];
+    }
+    
+    self.collectButton.selected = !self.collectButton.isSelected;
 }
 
 - (IBAction)share {
