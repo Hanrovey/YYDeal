@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YYDealListViewController.h"
-@interface YYHistoryViewController : YYDealListViewController
+#import "YYDealLocalListViewController.h"
+@interface YYHistoryViewController : YYDealLocalListViewController
 
 @end

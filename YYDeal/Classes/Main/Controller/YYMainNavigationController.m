@@ -23,7 +23,7 @@
     // 设置搜索取消按钮文字和颜色
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    attrs[NSForegroundColorAttributeName] = YYColor(29, 177, 157);
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
 }
 

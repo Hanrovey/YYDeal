@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Hanrovey. All rights reserved.
 //
 
-#import "YYDealListViewController.h"
+#import "YYDealLocalListViewController.h"
 
-@interface YYCollectViewController : YYDealListViewController
+@interface YYCollectViewController : YYDealLocalListViewController
 
 @end

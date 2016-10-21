@@ -30,9 +30,6 @@
     NSArray *historyDeals = [YYDealLocalTool sharedDealLocalTool].historyDeals;
     [self.deals addObjectsFromArray:historyDeals];
     [self.collectionView reloadData];
-    
-    // 设置左上角的返回按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"icon_back" highImageName:@"icon_back_highlighted" target:self action:@selector(back)];
 }
 
 #pragma mark - 实现父类方法
@@ -41,8 +38,4 @@
     return @"icon_latestBrowse_empty";
 }
 
-- (void)back
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end
