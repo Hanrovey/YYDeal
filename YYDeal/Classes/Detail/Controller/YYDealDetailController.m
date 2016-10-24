@@ -128,6 +128,24 @@
     
     // 图片
     [self.iconView setImageWithURL:[NSURL URLWithString:self.deal.image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
+    
+    // 剩余处理时间
+    // 当前时间 2014-08-27 09:00
+    NSDate *now = [NSDate date];
+    // 过期时间 2014-08-24 00:00
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSDate *deadTime = [[fmt dateFromString:self.deal.purchase_deadline] dateByAddingTimeInterval:24 * 3600];
+    // 比较俩个时间差距
+    NSCalendar *calender = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+    NSDateComponents *componet = [calender components:unit fromDate:now toDate:deadTime options:0];
+    if (componet.day > 365) {
+        self.leftTimeButton.title = @"一年内不过期";
+    }else
+    {
+        self.leftTimeButton.title = [NSString stringWithFormat:@"%ld天%ld时%ld分",(long)componet.day,(long)componet.hour,(long)componet.minute];
+    }
 }
 
 
