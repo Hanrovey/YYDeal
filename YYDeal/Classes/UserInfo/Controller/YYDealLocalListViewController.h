@@ -9,5 +9,5 @@
 #import "YYDealListViewController.h"
 
 @interface YYDealLocalListViewController : YYDealListViewController
-
+- (NSArray *)willDeleteDeals;
 @end

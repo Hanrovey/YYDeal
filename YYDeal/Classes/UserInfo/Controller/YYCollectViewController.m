@@ -44,18 +44,7 @@
  */
 - (void)delete
 {
-    NSMutableArray *temArr = [NSMutableArray array];
-    for (YYDeal *deal in self.deals)
-    {
-        if (deal.isChecking)
-        {
-            [temArr addObject:deal];
-        }
-    }
+    [[YYDealLocalTool sharedDealLocalTool] unsaveCollectDeals:[self willDeleteDeals]];
     
-    [[YYDealLocalTool sharedDealLocalTool] unsaveCollectDeals:temArr];
-    
-    [self.deals removeObjectsInArray:temArr];
-    [self.collectionView reloadData];
 }
 @end

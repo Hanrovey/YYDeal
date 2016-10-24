@@ -168,7 +168,7 @@
  */
 - (void)delete
 {
-    
+    [self dealCellDidClickCover:nil];
 }
 
 #pragma mark - YYDealCellDelegate
@@ -195,5 +195,32 @@
     {
         self.deleteItem.title = @"   删除   ";
     }
+}
+
+/**
+ *  返回即将删除的团购
+ */
+- (NSArray *)willDeleteDeals
+{
+    NSMutableArray *checkingDeals = [NSMutableArray array];
+    
+    // 取出被打钩的团购
+    for (YYDeal *deal in self.deals)
+    {
+        if (deal.isChecking)
+        {
+            [checkingDeals addObject:deal];
+            deal.checking = NO;
+            deal.editing = NO;
+        }
+    }
+    
+    [self.deals removeObjectsInArray:checkingDeals];
+    [self.collectionView reloadData];
+    
+    // 控制删除item的状态和文字
+    [self dealCellDidClickCover:nil];
+    
+    return checkingDeals;
 }
 @end
