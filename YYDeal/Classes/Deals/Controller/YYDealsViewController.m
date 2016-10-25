@@ -24,6 +24,8 @@
 #import "YYHistoryViewController.h"
 #import "YYMainNavigationController.h"
 #import "YYCollectViewController.h"
+#import "YYSearchViewController.h"
+
 @interface YYDealsViewController ()<AwesomeMenuDelegate>
 /** 顶部菜单*/
 /** 分类菜单 */
@@ -236,6 +238,9 @@
     
     [YYDealTool findDeals:param success:^(YYFindDealsResult *result) {
         
+        // 关闭刷新控件
+        [self.collectionView.mj_header endRefreshing];
+        
         // 如果请求过期了，直接返回
         if(param != self.lastParam) return ;
         
@@ -251,18 +256,18 @@
         // 刷新表格
         [self.collectionView reloadData];
         
-        // 关闭刷新控件
-        [self.collectionView.mj_header endRefreshing];
         
     } failure:^(NSError *error) {
+        
+        
+        // 关闭刷新控件
+        [self.collectionView.mj_header endRefreshing];
         
         // 如果请求过期了，直接返回
         if(param != self.lastParam) return ;
         
         [MBProgressHUD showError:@"加载团购失败，请稍后再试"];
         
-        // 关闭刷新控件
-        [self.collectionView.mj_header endRefreshing];
 
     }];
     
@@ -371,7 +376,10 @@
 /**  搜索 */
 - (void)searchClick
 {
-    
+    YYSearchViewController *searchVc = [[YYSearchViewController alloc] init];
+    searchVc.selectedCity = self.selectedCity;
+    YYMainNavigationController *nav = [[YYMainNavigationController alloc] initWithRootViewController:searchVc];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 /**  地图 */

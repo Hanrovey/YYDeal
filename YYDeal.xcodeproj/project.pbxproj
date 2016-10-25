@@ -84,6 +84,7 @@
 		1977670A1D81030B00EF257D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197767091D81030B00EF257D /* CoreTelephony.framework */; };
 		1977670C1D81031600EF257D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1977670B1D81031600EF257D /* libstdc++.tbd */; };
 		1977670E1D81032000EF257D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1977670D1D81032000EF257D /* libz.tbd */; };
+		199851111DBF85CA002C3BCE /* YYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199851101DBF85CA002C3BCE /* YYSearchViewController.m */; };
 		19BD15B71D6C25260083F7F7 /* YYCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */; };
 		19BD15B81D6C25260083F7F7 /* YYCitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */; };
 		19BD15BE1D6C3AED0083F7F7 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19BD15BA1D6C3AED0083F7F7 /* categories.plist */; };
@@ -313,6 +314,8 @@
 		197767091D81030B00EF257D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1977670B1D81031600EF257D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		1977670D1D81032000EF257D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1998510F1DBF85CA002C3BCE /* YYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSearchViewController.h; sourceTree = "<group>"; };
+		199851101DBF85CA002C3BCE /* YYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYSearchViewController.m; sourceTree = "<group>"; };
 		19BD15B41D6C25260083F7F7 /* YYCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCitiesViewController.h; sourceTree = "<group>"; };
 		19BD15B51D6C25260083F7F7 /* YYCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCitiesViewController.m; sourceTree = "<group>"; };
 		19BD15B61D6C25260083F7F7 /* YYCitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYCitiesViewController.xib; sourceTree = "<group>"; };
@@ -772,6 +775,22 @@
 			path = SinaSSO;
 			sourceTree = "<group>";
 		};
+		1998510D1DBF85A3002C3BCE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1998510E1DBF85A3002C3BCE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1998510F1DBF85CA002C3BCE /* YYSearchViewController.h */,
+				199851101DBF85CA002C3BCE /* YYSearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		19BD15B91D6C3AED0083F7F7 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +925,8 @@
 		8BE50F4C1C8868AB004DEC6F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1998510D1DBF85A3002C3BCE /* Map */,
+				1998510E1DBF85A3002C3BCE /* Search */,
 				194431901D82542C00DA8A89 /* UserInfo */,
 				1910E68A1D7EB0840031C1E1 /* Detail */,
 				8BFD65B51C8C5E6100AC5F22 /* Deals */,
@@ -1315,6 +1336,7 @@
 				8BE50F601C8868AB004DEC6F /* main.m in Sources */,
 				3ADF85651C919C2300A77AA4 /* YYSortsViewController.m in Sources */,
 				19E0510E1D7FFC6A007912F6 /* YYGetSingleDealResult.m in Sources */,
+				199851111DBF85CA002C3BCE /* YYSearchViewController.m in Sources */,
 				194312C01D7835E500343627 /* YYDropDownView.m in Sources */,
 				1910E62B1D7E74BF0031C1E1 /* YYEmptyView.m in Sources */,
 				3A5A66DE1C96D478008C8DD3 /* UIButton+Extension.m in Sources */,
